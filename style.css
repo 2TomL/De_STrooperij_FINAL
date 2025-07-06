@@ -224,6 +224,11 @@ li.lang-switch .lang-btn {
 	position: relative;
 	z-index: 1;
 }
+.mobile-logo {
+  display: block;
+  margin: 0 auto 2rem auto;
+  max-width: 180px;
+}
 #home::after {
 	content: '';
 	position: absolute;
@@ -242,46 +247,56 @@ li.lang-switch .lang-btn {
 	justify-content: flex-start;
 }
 #home h1 {
-	display: block;
-	width: 100%;
-	font-size: 4rem;
-	position: relative;
-	color: transparent;
-	animation: text_reveal 0.5s ease forwards;
-	animation-delay: 1s;
-}
-#home h1:nth-child(1) {
-	animation-delay: 1s;
-}
-#home h1:nth-child(2) {
-	animation-delay: 2s;
-}
-#home h1:nth-child(3) {
-	animation: text_reveal_name 0.5s ease forwards;
-	animation-delay: 3s;
-	font-weight: bold;
-	color: transparent;
-}
-#home h1 span {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 0;
-	background-color: rgb(37,38,95);
-	animation: text_reveal_box 1s ease;
-	animation-delay: 0.5s;
-}
-#home h1:nth-child(1) span {
-	animation-delay: 0.5s;
-}
-#home h1:nth-child(2) span {
-	animation-delay: 1.5s;
-}
-#home h1:nth-child(3) span {
-	animation-delay: 2.5s;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  font-size: 4rem;
+  margin: 0;
+  padding: 0;
 }
 
+#home h1 span {
+  position: relative;
+  display: inline-block;
+  color: transparent; /* <-- tekst is onzichtbaar bij laden */
+  z-index: 2;
+  animation: text_reveal 0.01s forwards;
+}
+
+#home h1:nth-of-type(1) span { animation-delay: 1s; }
+#home h1:nth-of-type(2) span { animation-delay: 2s; }
+#home h1:nth-of-type(3) span {
+  animation: text_reveal_name 0.01s forwards;
+  animation-delay: 3s;
+}
+
+#home h1 span::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 0; /* <-- niet zichtbaar bij laden */
+  height: 100%;
+  background: #25305f;
+  z-index: 3;
+  animation: text_reveal_box 1s forwards;
+}
+
+#home h1:nth-of-type(1) span::before { animation-delay: 0.5s; }
+#home h1:nth-of-type(2) span::before { animation-delay: 1.5s; }
+#home h1:nth-of-type(3) span::before { animation-delay: 2.5s; }
+
+@keyframes text_reveal_box {
+  0%   { width: 0; left: 0; }
+  50%  { width: 100%; left: 0; }
+  100% { width: 0; left: 100%; }
+}
+@keyframes text_reveal {
+  100% { color: #222; }
+}
+@keyframes text_reveal_name {
+  100% { color: #25305f; font-weight: bold; }
+}
 /* End home Section */
 
 /* missions Section */
@@ -654,14 +669,18 @@ li.lang-switch .lang-btn {
 	}
 }
 @keyframes text_reveal_box {
-	50% {
-		width: 100%;
-		left: 0;
-	}
-	100% {
-		width: 0;
-		left: 100%;
-	}
+  0% {
+    width: 0;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
 }
 @keyframes text_reveal {
 	100% {
@@ -688,6 +707,31 @@ li.lang-switch .lang-btn {
         opacity: 0.3;
     }
 }
+@keyframes vintageLogoIn {
+  0% {
+    opacity: 0;
+    filter: sepia(0.8) contrast(0.7) brightness(0.8) blur(2px);
+    transform: scale(0.85) rotate(-5deg);
+  }
+  60% {
+    opacity: 1;
+    filter: sepia(0.6) contrast(1.2) brightness(1) blur(0.5px);
+    transform: scale(1.05) rotate(2deg);
+  }
+  80% {
+    filter: sepia(0.5) contrast(1.1) brightness(0.95) blur(0);
+    transform: scale(0.98) rotate(-1deg);
+  }
+  100% {
+    opacity: 1;
+    filter: sepia(0.5) contrast(1.1) brightness(0.95) blur(0);
+    transform: scale(1) rotate(0deg);
+  }
+}
+@keyframes vintageNoiseIn {
+  0% { opacity: 0; }
+  100% { opacity: 0.25; }
+}
 /* End Keyframes */
 
 /* Media Query For Tablet */
@@ -704,7 +748,10 @@ li.lang-switch .lang-btn {
 	#home h1 {
 		font-size: 7rem;
 	}
-	
+	.mobile-logo {
+    	display: none;
+		
+  	}
 	/* End home */
 
 	/* missions Section */
@@ -887,3 +934,93 @@ li.lang-switch .lang-btn {
   	}
 }
 /* End  Media Query For Desktop */
+@media only screen and (max-width: 766px) {
+  #home {
+    background: none !important;
+    position: relative;
+    min-height: 350px; /* of wat je wilt */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+ #home .home > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  #home h1 {
+    text-align: center;
+  }
+  .mobile-logo {
+    display: block;
+    margin: 0 auto 2rem auto;
+    max-width: 200px;
+    z-index: 2;
+    position: relative;
+  }
+  /* Overlay */
+  #home::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgb(155, 153, 153);
+    opacity: 0.7;
+    z-index: 1;
+  }
+  #home h1 {
+    position: relative;
+    z-index: 2;
+  }
+  .mobile-logo {
+    filter: sepia(0.5) contrast(1.1) brightness(0.95);
+    opacity: 0;
+    animation: vintageLogoIn 2.5s cubic-bezier(.68,-0.55,.27,1.55) 0.3s forwards;
+    position: relative;
+    z-index: 2;
+    max-width: 200px;
+    margin-bottom: 2rem;
+  }
+  .logo-vintage-overlay {
+    position: absolute;
+    left: 50%; top: 0;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
+    pointer-events: none;
+    z-index: 3;
+    opacity: 0.25;
+    background: url('https://www.transparenttextures.com/patterns/noise.png');
+    animation: vintageNoiseIn 2.5s 0.8s forwards;
+    opacity: 0;
+    border-radius: 12px;
+  }
+}
+
+@keyframes vintageLogoIn {
+  0% {
+    opacity: 0;
+    filter: sepia(0.8) contrast(0.7) brightness(0.8) blur(2px);
+    transform: scale(0.85) rotate(-5deg);
+  }
+  60% {
+    opacity: 1;
+    filter: sepia(0.6) contrast(1.2) brightness(1) blur(0.5px);
+    transform: scale(1.05) rotate(2deg);
+  }
+  80% {
+    filter: sepia(0.5) contrast(1.1) brightness(0.95) blur(0);
+    transform: scale(0.98) rotate(-1deg);
+  }
+  100% {
+    opacity: 1;
+    filter: sepia(0.5) contrast(1.1) brightness(0.95) blur(0);
+    transform: scale(1) rotate(0deg);
+  }
+}
+@keyframes vintageNoiseIn {
+  0% { opacity: 0; }
+  100% { opacity: 0.25; }
+}
