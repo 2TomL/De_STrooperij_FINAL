@@ -225,9 +225,12 @@ li.lang-switch .lang-btn {
 	z-index: 1;
 }
 .mobile-logo {
-  display: block;
-  margin: 0 auto 2rem auto;
-  max-width: 180px;
+  display: none !important;
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0 !important;
 }
 #home::after {
 	content: '';
@@ -954,11 +957,11 @@ li.lang-switch .lang-btn {
     text-align: center;
   }
   .mobile-logo {
-    display: block;
-    margin: 0 auto 2rem auto;
-    max-width: 200px;
-    z-index: 2;
-    position: relative;
+    display: block !important;
+    height: auto !important;
+    width: 200px !important; /* of je gewenste breedte */
+    margin-bottom: 2rem !important;
+    opacity: 1 !important;
   }
   /* Overlay */
   #home::after {
