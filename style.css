@@ -226,11 +226,7 @@ li.lang-switch .lang-btn {
 }
 .mobile-logo {
   display: none !important;
-  height: 0 !important;
-  width: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  opacity: 0 !important;
+  opacity: 0;
 }
 #home::after {
 	content: '';
@@ -958,10 +954,13 @@ li.lang-switch .lang-btn {
   }
   .mobile-logo {
     display: block !important;
-    height: auto !important;
-    width: 200px !important; /* of je gewenste breedte */
-    margin-bottom: 2rem !important;
-    opacity: 1 !important;
+    opacity: 0;
+    filter: sepia(0.5) contrast(1.1) brightness(0.95);
+    animation: vintageLogoIn 2.5s cubic-bezier(.68,-0.55,.27,1.55) 0s forwards;
+    position: relative;
+    z-index: 2;
+    max-width: 200px;
+    margin-bottom: 2rem;
   }
   /* Overlay */
   #home::after {
