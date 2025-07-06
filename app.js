@@ -88,7 +88,7 @@ const translations = {
         ticketTitle: "Tickets",
         ticketText: "Koop hier",
         emailTitle: "Email",
-        emailText: "DeStrooperij@gmail.com",
+        emailText: "summerjam2.0@hotmail.com",
         volunteerTitle: "Vrijwilligers",
         volunteerText: "Wil je meehelpen op ons volgende event?",
         footerText: "Gemaakt door Tom Lamers – 2025"
@@ -131,7 +131,7 @@ const translations = {
         ticketTitle: "Tickets",
         ticketText: "Buy here",
         emailTitle: "Email",
-        emailText: "DeStrooperij@gmail.com",
+        emailText: "summerjam2.0@hotmail.com",
         volunteerTitle: "Volunteers",
         volunteerText: "Want to help out at our next event?",
         footerText: "Built by Tom Lamers – 2025"
@@ -174,7 +174,7 @@ const translations = {
         ticketTitle: "Tickets",
         ticketText: "Achetez ici",
         emailTitle: "Email",
-        emailText: "DeStrooperij@gmail.com",
+        emailText: "summerjam2.0@hotmail.com",
         volunteerTitle: "Bénévoles",
         volunteerText: "Envie de nous aider lors de notre prochain événement ?",
         footerText: "Créé par Tom Lamers – 2025"
