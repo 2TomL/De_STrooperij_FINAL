@@ -431,7 +431,7 @@ li.lang-switch .lang-btn {
 #events .event-item:hover .event-img img {
 	transform: scale(1.1);
 }
-.event-info p[data-i18n="event2register3x3"] {
+.event-info p[class="event2register3x3"] {
   display: flex;
   background-color: #00172e;  /* dark blue */
   color: white;
@@ -447,12 +447,12 @@ li.lang-switch .lang-btn {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.event-info p[data-i18n="event2register3x3"] a {
+.event-info p[class="event2register3x3"] a {
   color: white;
   text-decoration: none;
 }
 
-.event-info p[data-i18n="event2register3x3"]:hover {
+.event-info p[class="event2register3x3"]:hover {
   background-color: #022e5a;  /* lighter blue on hover */
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
   transform: translateY(-2px);
