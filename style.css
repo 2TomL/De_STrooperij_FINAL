@@ -225,9 +225,7 @@ li.lang-switch .lang-btn {
 	z-index: 1;
 }
 .mobile-logo {
-  display: block;
-  margin: 0 auto 2rem auto;
-  max-width: 180px;
+  display: none;
 }
 #home::after {
 	content: '';
