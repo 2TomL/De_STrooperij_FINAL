@@ -1001,6 +1001,7 @@ li.lang-switch .lang-btn {
   }
 }
 
+/* Vintage Logo Animation */
 @keyframes vintageLogoIn {
   0% {
     opacity: 0;
