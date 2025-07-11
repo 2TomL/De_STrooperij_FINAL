@@ -935,7 +935,7 @@ li.lang-switch .lang-btn {
   		display: flex;
   		flex-direction: row;
   		justify-content: center;
-  		gap: 30px; /* ← bepaal hier zelf de afstand, bv. 20px, 40px, 60px */
+  		gap: 40px; /* ← bepaal hier zelf de afstand, bv. 20px, 40px, 60px */
 }
 }
 /* End  Media Query For Desktop */
