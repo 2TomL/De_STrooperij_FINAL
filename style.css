@@ -931,6 +931,12 @@ li.lang-switch .lang-btn {
     	color: rgb(37, 38, 95);
     	border-color: rgb(37, 38, 95);
   	}
+	#contact .contact-items {
+  		display: flex;
+  		flex-direction: row;
+  		justify-content: center;
+  		gap: 30px; /* ← bepaal hier zelf de afstand, bv. 20px, 40px, 60px */
+}
 }
 /* End  Media Query For Desktop */
 @media only screen and (max-width: 766px) {
