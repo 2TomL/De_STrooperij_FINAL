@@ -75,12 +75,12 @@ li.lang-switch .lang-btn {
     	background-color: transparent;
   		color: white;
   		border: 2px solid white;
-  		padding: 2px 4px;       
+  		padding: 3px 6px;       
   		margin: 0 2px;         
   		cursor: pointer;
   		font-weight: bold;
   		text-transform: uppercase;
-  		font-size: 0.75rem;
+  		font-size: 0.85rem;
   	}
 
   	li.lang-switch .lang-btn:hover {
@@ -937,6 +937,17 @@ li.lang-switch .lang-btn {
   		justify-content: center;
   		gap: 40px; /* ← bepaal hier zelf de afstand, bv. 20px, 40px, 60px */
 }
+li.lang-switch .lang-btn {
+    	background-color: transparent;
+  		color: white;
+  		border: 2px solid white;
+  		padding: 3px 6px;       
+  		margin: 0 2px;         
+  		cursor: pointer;
+  		font-weight: bold;
+  		text-transform: uppercase;
+  		font-size: 0.9rem;
+  	}
 }
 /* End  Media Query For Desktop */
 @media only screen and (max-width: 766px) {
