@@ -656,6 +656,63 @@ li.lang-switch .lang-btn {
 }
 /* End Footer */
 
+/* Privacy button styling */
+.footer-privacy-btn {
+  float: left;
+  margin-right: 2rem;
+}
+#privacyBtn {
+  background: #25305f;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+#privacyBtn:hover {
+  background: #1a2340;
+}
+
+/* Privacy modal styling */
+#privacyModal {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 10vh;
+  transform: translateX(-50%);
+  width: 90vw;
+  max-width: 400px;
+  height: 70vh;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  z-index: 2000;
+  overflow-y: auto;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+}
+#privacyModal h2 {
+  color: #25305f;
+  margin-top: 0;
+}
+#privacyModal button#closePrivacyModal {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #25305f;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  #privacyModal {
+    max-width: 95vw;
+    height: 80vh;
+    padding: 1rem;
+  }
+}
 /* Keyframes */
 @keyframes hamburger_puls {
 	0% {

@@ -201,3 +201,25 @@ function closeVideoModal() {
     video.pause();
     modal.style.display = "none";
 }
+
+// Privacy modal open/close
+document.addEventListener('DOMContentLoaded', function() {
+  var privacyBtn = document.getElementById('privacyBtn');
+  var privacyModal = document.getElementById('privacyModal');
+  var closePrivacyModal = document.getElementById('closePrivacyModal');
+
+  if (privacyBtn && privacyModal && closePrivacyModal) {
+    privacyBtn.addEventListener('click', function() {
+      privacyModal.style.display = 'block';
+    });
+    closePrivacyModal.addEventListener('click', function() {
+      privacyModal.style.display = 'none';
+    });
+    // Optional: close modal when clicking outside
+    window.addEventListener('click', function(e) {
+      if (e.target === privacyModal) {
+        privacyModal.style.display = 'none';
+      }
+    });
+  }
+});
