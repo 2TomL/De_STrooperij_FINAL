@@ -218,9 +218,7 @@ li.lang-switch .lang-btn {
 
 /* home Section */
 #home {
-	/* background-image: url(./img/LOGO-DST.jpg); */
-	background-size: cover;
-	background-position: top center;
+	/* Geen achtergrondfoto meer op home */
 	position: relative;
 	z-index: 1;
 }
