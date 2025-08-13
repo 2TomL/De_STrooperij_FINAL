@@ -218,7 +218,9 @@ li.lang-switch .lang-btn {
 
 /* home Section */
 #home {
-	/* Geen achtergrondfoto meer op home */
+	background-image: url(./img/LOGO-DST.jpg);
+	background-size: cover;
+	background-position: top center;
 	position: relative;
 	z-index: 1;
 }
@@ -1027,13 +1029,13 @@ li.lang-switch .lang-btn {
   }
   .mobile-logo {
     display: block !important;
-    opacity: 1 !important;
-    max-width: 200px;
-    margin-bottom: 0.5rem;
+    opacity: 0;
+    filter: sepia(0.5) contrast(1.1) brightness(0.95);
+    animation: vintageLogoIn 2.5s cubic-bezier(.68,-0.55,.27,1.55) 0s forwards;
     position: relative;
     z-index: 2;
-    filter: sepia(0.5) contrast(1.1) brightness(0.95);
-    animation: vintageLogoIn 2.5s cubic-bezier(.68,-0.55,.27,1.55) 0.3s forwards;
+    max-width: 200px;
+    margin-bottom: 2rem;
   }
   /* Overlay */
   #home::after {
@@ -1074,165 +1076,29 @@ li.lang-switch .lang-btn {
   }
 }
 
-/* Desktop logo rechts van tekst op home */
-.home-flex-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-}
-.home-text-block {
-  flex: 1 1 0;
-  min-width: 0;
-}
-.desktop-logo-block {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 40px;
-}
-.desktop-logo {
-  max-width: 220px;
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-}
-.desktop-logo-anim-wrapper {
-  overflow: visible !important;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  position: static !important;
-  width: auto !important;
-  height: auto !important;
-  background: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-}
-@media (max-width: 766px) {
-  .desktop-logo-block {
-    display: none !important;
+/* Vintage Logo Animation */
+@keyframes vintageLogoIn {
+  0% {
+    opacity: 0;
+    filter: sepia(0.8) contrast(0.7) brightness(0.8) blur(2px);
+    transform: scale(0.85) rotate(-5deg);
   }
-  .home-flex-row {
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
+  60% {
+    opacity: 1;
+    filter: sepia(0.6) contrast(1.2) brightness(1) blur(0.5px);
+    transform: scale(1.05) rotate(2deg);
   }
-  .home-text-block {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  80% {
+    filter: sepia(0.5) contrast(1.1) brightness(0.95) blur(0);
+    transform: scale(0.98) rotate(-1deg);
   }
-  .mobile-logo-wrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
+  100% {
+    opacity: 1;
+    filter: sepia(0.5) contrast(1.1) brightness(0.95) blur(0);
+    transform: scale(1) rotate(0deg);
   }
 }
-.mobile-logo-wrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 1.5rem;
-  }
-
-.logo-anim-wrapper {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin-bottom: 1rem;
-}
-.logo-hex {
-  max-width: 180px;
-  width: 100%;
-  height: auto;
-  display: block;
-  z-index: 1;
-  transition: transform 0.5s cubic-bezier(.68,-0.55,.27,1.55);
-}
-.logo-text-anim {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-family: 'Rethink Sans', sans-serif;
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #222;
-  letter-spacing: 0.08em;
-  z-index: 2;
-  pointer-events: none;
-  transition: transform 0.5s cubic-bezier(.68,-0.55,.27,1.55), opacity 0.4s;
-  opacity: 0.92;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-.desktop-logo-block .logo-anim-wrapper {
-  min-width: 220px;
-}
-.desktop-logo-block .logo-hex {
-  max-width: 340px;
-}
-.desktop-logo-block .logo-text-anim.desktop {
-  font-size: 3.2rem;
-}
-@media (max-width: 766px) {
-  .desktop-logo-block {
-    display: none !important;
-  }
-  .logo-hex {
-    max-width: 140px;
-  }
-  .logo-text-anim {
-    font-size: 1.4rem;
-  }
-}
-/* Animatie bij hover: voorbeeld, JS kan deze klassen togglen */
-.logo-anim-wrapper:hover .logo-hex,
-.logo-anim-wrapper.active .logo-hex {
-  transform: scale(1.08) rotate(-6deg);
-}
-.logo-anim-wrapper:hover .logo-text-anim,
-.logo-anim-wrapper.active .logo-text-anim {
-  transform: translate(-50%, -60%) scale(1.08) rotate(2deg);
-  opacity: 1;
-}
-
-/* Video modal styles */
-.video-modal-hidden {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-.event-video {
-  max-width: 90vw;
-  max-height: 80vh;
-}
-.video-modal-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
+@keyframes vintageNoiseIn {
+  0% { opacity: 0; }
+  100% { opacity: 0.25; }
 }
