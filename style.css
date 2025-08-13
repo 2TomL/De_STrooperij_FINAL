@@ -1093,13 +1093,11 @@ li.lang-switch .lang-btn {
   margin-left: 40px;
 }
 .desktop-logo {
-  max-width: 340px;
+  max-width: 220px;
   width: 100%;
   height: auto;
   display: block;
   object-fit: contain;
-  background: none;
-  box-shadow: none;
 }
 .desktop-logo-anim-wrapper {
   overflow: visible !important;
