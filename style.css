@@ -786,6 +786,10 @@ li.lang-switch .lang-btn {
   0% { opacity: 0; }
   100% { opacity: 0.25; }
 }
+@keyframes logo-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
 /* End Keyframes */
 
 /* Media Query For Tablet */
@@ -1255,16 +1259,17 @@ filter: drop-shadow(0 0 32px #fff) drop-shadow(0 0 48px #25305f);
   background: transparent;
   overflow: visible;
   transform: rotate(0deg);
-  animation: rotate-left-normal 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) 0s 1 normal both;
+  animation: rotate-left-normal 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) 0s 1 normal both;
 }
 .desktop-hex-logo img {
   width: 80%;
   height: 80%;
   object-fit: contain;
-  opacity: 1;
+  opacity: 0;
   transition: opacity 0.5s;
   margin: auto;
   transform: rotate(90deg);
+  animation: logo-fade-in 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) 0s 1 normal both;
 }
 .home-titles h1 span {
   animation-delay: 2.1s !important;
