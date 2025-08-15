@@ -218,9 +218,7 @@ li.lang-switch .lang-btn {
 
 /* home Section */
 #home {
-	background-image: url(./img/LOGO-DST.jpg);
-	background-size: cover;
-	background-position: top center;
+	background: none !important;
 	position: relative;
 	z-index: 1;
 }
@@ -267,7 +265,7 @@ li.lang-switch .lang-btn {
 #home h1:nth-of-type(2) span { animation-delay: 2s; }
 #home h1:nth-of-type(3) span {
   animation: text_reveal_name 0.01s forwards;
-  animation-delay: 3s;
+  animation-delay: 3.2s;
 }
 
 #home h1 span::before {
@@ -483,7 +481,7 @@ li.lang-switch .lang-btn {
   }
 }
 
-	/* Video icon styling */
+/* Video icon styling */
 	.video-icon {
   		position: absolute;
   		top: 10px;    
@@ -510,7 +508,7 @@ li.lang-switch .lang-btn {
   max-height: 90vh;
   width: auto;
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(37, 38, 95);
+  box-shadow: 0 0 20px rgba(37,38,95);
 }
 /* End events section */
 
@@ -1101,4 +1099,190 @@ li.lang-switch .lang-btn {
 @keyframes vintageNoiseIn {
   0% { opacity: 0; }
   100% { opacity: 0.25; }
+}
+
+/* Slideshow popup voor graffiti foto's */
+#grafTModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.92);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+#grafTModal .grafT-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+#grafTSlideshow {
+  max-width: 90vw;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#grafTImage {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+}
+.grafT-nav-btns {
+  margin-top: 18px;
+  display: flex;
+  gap: 18px;
+}
+.grafT-nav-btns button {
+  font-size: 1.3rem;
+  background: #064375;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  cursor: pointer;
+}
+.grafT-nav-btns button:hover,
+.grafT-nav-btns button:focus {
+  background: #444;
+}
+/* Zijknop wrapper apart positioneren */
+.event-external-btn-outer {
+  position: relative;
+}
+.event-external-btn-wrapper {
+  position: absolute;
+  top: 5cm;
+  right: -720px;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  height: 100%;
+}
+@media only screen and (max-width: 766px) {
+	.event-external-btn-wrapper {
+		position: absolute;
+		top: -16vw;
+		right: -40vw;
+		z-index: 10;
+		display: flex;
+		align-items: flex-start;
+		height: auto;
+		width: auto;
+		pointer-events: auto;
+	}
+	.event-external-btn-img {
+		width: 120px;
+		height: 120px;
+	}
+}
+.event-external-btn {
+  background: #fff;
+  color: #064375;
+  border: 2px solid #064375;
+  border-radius: 24px;
+  padding: 10px 22px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(37,38,95,0.08);
+  transition: background 0.2s, color 0.2s;
+  margin-top: 12px;
+}
+.event-external-btn:hover,
+.event-external-btn:focus {
+  background: #064375;
+  color: #fff;
+}
+.event-external-btn-img {
+  cursor: pointer;
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  background: none;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.event-external-btn-img:hover,
+.event-external-btn-img:focus {
+filter: drop-shadow(0 8px 32px rgba(37,38,95,0.25)) drop-shadow(0 1.5px 8px rgba(0,0,0,0.10));
+  transform: scale(1.08) translateY(-10px);
+  animation: bounceArrow 0.4s;
+}
+@keyframes bounceArrow {
+  0%   { transform: scale(1) translateY(0); }
+  40%  { transform: scale(1.12) translateY(-18px); }
+  60%  { transform: scale(1.05) translateY(-8px); }
+  100% { transform: scale(1.08) translateY(-10px); }
+}
+.all-events {
+  position: relative;
+}
+
+/* Desktop-only hexagon logo naast home titel */
+.home-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.home-titles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.desktop-hex-logo {
+  width: 500px;
+  height: 550px;
+  margin-right: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+  background: transparent;
+  overflow: visible;
+  transform: rotate(0deg);
+  animation: rotate-left-normal 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) 0s 1 normal both;
+}
+.desktop-hex-logo img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  opacity: 1;
+  transition: opacity 0.5s;
+  margin: auto;
+  transform: rotate(90deg);
+}
+.home-titles h1 span {
+  animation-delay: 2.1s !important;
+}
+.home-titles h1:nth-of-type(1) span {
+  animation-delay: 1.1s !important;
+}
+.home-titles h1:nth-of-type(2) span {
+  animation-delay: 1.9s !important;
+}
+.home-titles h1:nth-of-type(3) span {
+  animation-delay: 3.2s !important;
+}
+@keyframes rotate-left-normal {
+  0% { transform: rotate(0); transform-origin: left; }
+  100% { transform: rotate(360deg); transform-origin: left; }
+}
+@media only screen and (max-width: 1200px) {
+  .desktop-hex-logo {
+    display: none !important;
+  }
 }

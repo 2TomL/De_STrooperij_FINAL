@@ -42,15 +42,28 @@ langButtons.forEach(btn => {
 });
 
 function setLanguage(lang) {
-    const elements = document.querySelectorAll('[data-i18n]');
-    elements.forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        el.textContent = translations[lang][key];
-    });
+  // Vertaal tekstinhoud
+  const elements = document.querySelectorAll('[data-i18n]');
+  elements.forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    }
+  });
+  // Vertaal tooltips (title)
+  const tooltipElements = document.querySelectorAll('[data-i18n-title]');
+  tooltipElements.forEach(el => {
+    const key = el.getAttribute('data-i18n-title');
+    if (translations[lang][key]) {
+      el.title = translations[lang][key];
+    }
+  });
 }
 
 const translations = {
-    nl: {
+  nl: {
+    graffitiShowroomTooltip: "Graffiti Showroom",
+    basketballTooltip: "3x3 Basketbal Inschrijven",
         home: "Home",
         mission: "Missie",
         events: "Events",
@@ -91,9 +104,13 @@ const translations = {
         emailText: "summerjam2.0@hotmail.com",
         volunteerTitle: "Vrijwilligers",
         volunteerText: "Wil je meehelpen op ons volgende event?",
-        footerText: "Gemaakt door Tom Lamers – 2025"
+        footerText: "Gemaakt door Tom Lamers – 2025",
+        footerFacebookTooltip: "Volg ons op Facebook",
+        footerInstagramTooltip: "Volg ons op Instagram"
     },
-    en: {
+  en: {
+    graffitiShowroomTooltip: "Graffiti Showroom",
+    basketballTooltip: "Register for 3x3 Basketball",
         home: "Home",
         mission: "Mission",
         events: "Events",
@@ -134,9 +151,13 @@ const translations = {
         emailText: "summerjam2.0@hotmail.com",
         volunteerTitle: "Volunteers",
         volunteerText: "Want to help out at our next event?",
-        footerText: "Built by Tom Lamers – 2025"
+        footerText: "Built by Tom Lamers – 2025",
+        footerFacebookTooltip: "Follow us on Facebook",
+        footerInstagramTooltip: "Follow us on Instagram"
     },
-    fr: {
+  fr: {
+    graffitiShowroomTooltip: "Showroom Graffiti",
+    basketballTooltip: "Inscription Basket 3x3",
         home: "Accueil",
         mission: "Mission",
         events: "Événements",
@@ -177,7 +198,9 @@ const translations = {
         emailText: "summerjam2.0@hotmail.com",
         volunteerTitle: "Bénévoles",
         volunteerText: "Envie de nous aider lors de notre prochain événement ?",
-        footerText: "Créé par Tom Lamers – 2025"
+        footerText: "Créé par Tom Lamers – 2025",
+        footerFacebookTooltip: "Suivez-nous sur Facebook",
+        footerInstagramTooltip: "Suivez-nous sur Instagram"
     }
 };
 
@@ -201,3 +224,50 @@ function closeVideoModal() {
     video.pause();
     modal.style.display = "none";
 }
+
+// --- Graffiti Slideshow ---
+let grafTImages = [
+  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.37_f54d8539.jpg',
+  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.37_e086e3bf.jpg',
+  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.37_b1452ba7.jpg',
+  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.37_a17fd617.jpg',
+  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.37_92334d94.jpg',
+  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.37_6a1d714f.jpg',
+  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.37_370e8650.jpg',
+  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.37_1cb98c8a.jpg',
+  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.36_f94bfd56.jpg',
+  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.36_dd6e6790.jpg',
+  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.36_c9565aac.jpg',
+  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.36_b2f8f34c.jpg',
+  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.36_97d15007.jpg',
+  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.36_34b8d3db.jpg',
+  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.36_2dc345e6.jpg',
+  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.36_243e04a1.jpg',
+  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.36_1be166a2.jpg'
+];
+let grafTIndex = 0;
+window.openGrafTSlideshow = function() {
+  if (grafTImages.length === 0) {
+    document.getElementById('grafTImage').src = '';
+  } else {
+    grafTIndex = 0;
+    document.getElementById('grafTImage').src = grafTImages[grafTIndex];
+  }
+  document.getElementById('grafTModal').style.display = 'flex';
+}
+window.closeGrafTSlideshow = function() {
+  document.getElementById('grafTModal').style.display = 'none';
+}
+window.nextGrafTImage = function() {
+  if (grafTImages.length > 0) {
+    grafTIndex = (grafTIndex + 1) % grafTImages.length;
+    document.getElementById('grafTImage').src = grafTImages[grafTIndex];
+  }
+}
+window.prevGrafTImage = function() {
+  if (grafTImages.length > 0) {
+    grafTIndex = (grafTIndex - 1 + grafTImages.length) % grafTImages.length;
+    document.getElementById('grafTImage').src = grafTImages[grafTIndex];
+  }
+}
+// --- einde slideshow ---

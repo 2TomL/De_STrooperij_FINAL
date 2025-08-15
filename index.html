@@ -62,12 +62,17 @@
     <!-- home Section  -->
     <section id="home">
       <div class="home container">
-        <div>
+        <div class="home-content">
           <img src="img/LOGO-DST-klein-removebg-preview.png" alt="Logo De STrooperij" class="mobile-logo" />
           <div class="logo-vintage-overlay"></div>
-          <h1><span>Welcome</span></h1>
-          <h1><span>at</span></h1>
-          <h1><span>De STrooperij</span></h1>
+          <div class="desktop-hex-logo">
+            <img src="img/LOGO-DST-klein-removebg-preview - Copy.png" alt="Logo De STrooperij" />
+          </div>
+          <div class="home-titles">
+            <h1><span>Welcome</span></h1>
+            <h1><span>at</span></h1>
+            <h1><span>De STrooperij</span></h1>
+          </div>
         </div>
       </div>
     </section>
@@ -114,6 +119,23 @@
           <h1 class="section-title" data-i18n="eventsTitle">EVENTS</h1>
         </div>
         <div class="all-events">
+        <!-- Button rechtsboven buiten het event-item veld -->
+        <div class="event-external-btn-outer">
+          <div class="event-external-btn-wrapper">
+            <img src="img/Adobe Express - 1.png" alt="Bekijk graffiti foto's" class="event-external-btn-img" onclick="openGrafTSlideshow()" style="cursor:pointer;" title="Graffiti Showroom" data-i18n-title="graffitiShowroomTooltip" />
+          </div>
+        </div>
+    <!-- Slideshow Modal voor grafT -->
+    <div id="grafTModal">
+      <button class="grafT-close-btn" onclick="closeGrafTSlideshow()">✕</button>
+      <div id="grafTSlideshow">
+        <img id="grafTImage" src="" alt="Graffiti" />
+        <div class="grafT-nav-btns">
+          <button onclick="prevGrafTImage()">Vorige</button>
+          <button onclick="nextGrafTImage()">Volgende</button>
+        </div>
+      </div>
+    </div>
   
           <div class="event-item">
             <div class="event-info">
@@ -121,7 +143,7 @@
               <h2 data-i18n="event2Date">augustus 2025</h2>
               <p data-i18n="event2Text">Terug in het Warandepark – de thuisbasis – brengt Summer Jam opnieuw een dag vol urban sports en muziek. Verwacht een skatecontest, graffiti-jam, 3on3 basketbal, hiphop-breakdance, freerunning en kinderanimatie. ’s Avonds sluiten we af met een spectaculaire feest in het park.</p>
               <p class="event2register3x3">🏀  
-                <a href="https://docs.google.com/forms/d/1O1DdXjgxXEg_grh-ob-nJxmgEQskq4gDfwxGEtAzj1U/viewform" target="_blank" rel="noopener" data-i18n="event2register3x3">Inschrijven 3x3</a>
+                <a href="https://docs.google.com/forms/d/1O1DdXjgxXEg_grh-ob-nJxmgEQskq4gDfwxGEtAzj1U/viewform" target="_blank" rel="noopener" data-i18n="event2register3x3" title="3x3 Basketbal Inschrijven" data-i18n-title="basketballTooltip">Inschrijven 3x3</a>
               </p>
             </div>
             <div class="event-img">
@@ -234,12 +256,12 @@
         <div class="social-icon">
           <div class="social-item">
             <a href="https://www.facebook.com/destrooperij" target="_blank" rel="noopener">
-              <img src="img/facebook.png" alt="Facebook" />
+              <img src="img/facebook.png" alt="Facebook" title="Volg ons op Facebook" data-i18n-title="footerFacebookTooltip" />
             </a>
           </div>
           <div class="social-item">
             <a href="https://www.instagram.com/destrooperij/" target="_blank" rel="noopener">
-              <img src="img/instagram-logo.png" alt="Instagram" />
+              <img src="img/instagram-logo.png" alt="Instagram" title="Volg ons op Instagram" data-i18n-title="footerInstagramTooltip" />
             </a>
           </div>
         </div>
