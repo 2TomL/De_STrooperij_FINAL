@@ -1171,7 +1171,7 @@ li.lang-switch .lang-btn {
 @media only screen and (max-width: 766px) {
 	.event-external-btn-wrapper {
 		position: absolute;
-		top: -16vw;
+		top: -21vw;
 		right: -40vw;
 		z-index: 10;
 		display: flex;
