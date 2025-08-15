@@ -1171,7 +1171,7 @@ li.lang-switch .lang-btn {
 @media only screen and (max-width: 766px) {
 	.event-external-btn-wrapper {
 		position: absolute;
-		top: -18vw;
+		top: -21vw;
 		right: -40vw;
 		z-index: 10;
 		display: flex;
@@ -1315,4 +1315,10 @@ filter: drop-shadow(0 0 32px #fff) drop-shadow(0 0 48px #25305f);
   border: none;
   color: #fff;
   cursor: pointer;
+}
+
+/* Zorg dat de glow niet wordt afgesneden */
+.event-external-btn-outer,
+.event-external-btn-wrapper {
+  overflow: visible !important;
 }
