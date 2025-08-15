@@ -1171,7 +1171,7 @@ li.lang-switch .lang-btn {
 @media only screen and (max-width: 766px) {
 	.event-external-btn-wrapper {
 		position: absolute;
-		top: -21vw;
+		top: -18vw;
 		right: -40vw;
 		z-index: 10;
 		display: flex;
@@ -1208,14 +1208,15 @@ li.lang-switch .lang-btn {
   height: 180px;
   object-fit: contain;
   border-radius: 0;
-  box-shadow: none;
-  border: none;
-  background: none;
-  transition: box-shadow 0.3s, transform 0.3s;
+	box-shadow: none;
+	border: none;
+	background: none;
+	filter: drop-shadow(0 0 18px #fff) drop-shadow(0 0 32px #25305f);
+	transition: filter 0.3s, box-shadow 0.3s, transform 0.3s;
 }
 .event-external-btn-img:hover,
 .event-external-btn-img:focus {
-filter: drop-shadow(0 8px 32px rgba(37,38,95,0.25)) drop-shadow(0 1.5px 8px rgba(0,0,0,0.10));
+filter: drop-shadow(0 0 32px #fff) drop-shadow(0 0 48px #25305f);
   transform: scale(1.08) translateY(-10px);
   animation: bounceArrow 0.4s;
 }
