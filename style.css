@@ -1,3 +1,8 @@
+@media only screen and (max-width: 450px) {
+  .home-only .spraycan-anim-group {
+    margin-top: 32px !important;
+  }
+}
 @media (max-width: 600px) {
   .spraycan-spray {
     left: 55vw !important;
