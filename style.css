@@ -1,5 +1,9 @@
 /* --- Forceer logo positie op kleine schermen --- */
 @media (max-width: 600px) {
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
   .spraycan-anim-group {
   top: 10px !important;
     right: auto !important;
@@ -17,7 +21,11 @@
 }
 @media (max-width: 600px) {
   .spraycan-anim-group {
-    top: 10px !important;
+    top: calc(10px - 1cm) !important;
+  }
+  .spraycan-spray {
+    top: calc(-13vw - 3cm) !important;
+  }
   }
   .spraycan-spray {
     left: 55vw !important;
