@@ -1,7 +1,15 @@
+/* --- Forceer logo positie op kleine schermen --- */
+@media (max-width: 600px) {
+  .spraycan-anim-group {
+    top: 50px !important;
+    right: auto !important;
+    left: 10px !important;
+  }
+}
 @media only screen and (max-width: 450px) {
   .spraycan-anim-group {
     top: 100px !important;
-    margin-left: 23px !important;
+    margin-left: 15px !important;
   }
   .home-content {
     padding-top: 20px !important;
@@ -9,7 +17,7 @@
 }
 @media (max-width: 600px) {
   .spraycan-anim-group {
-    top: 160px !important;
+    top: 10px !important;
   }
   .spraycan-spray {
     left: 55vw !important;
