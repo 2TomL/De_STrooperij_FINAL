@@ -3,6 +3,9 @@
   <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css"/>
   <link rel="icon" type="image/png" href="https://destrooperij.be/img/favicon.png">
   <title data-i18n="title">DeSTrooperij</title>
@@ -48,9 +51,9 @@
               <li><a href="#about" data-i18n="about" data-after="About">Over ons</a></li>
               <li><a href="#contact" data-i18n="contact" data-after="Contact">Contact</a></li>
               <li class="lang-switch">
-                <button class="lang-btn" data-lang="nl">NL</button>
-                <button class="lang-btn" data-lang="en">EN</button>
-                <button class="lang-btn" data-lang="fr">FR</button>
+                <button class="lang-btn" data-lang="nl" data-i18n="lang_nl" data-i18n-title="lang_nl_title" title="Nederlands">NL</button>
+                <button class="lang-btn" data-lang="en" data-i18n="lang_en" data-i18n-title="lang_en_title" title="Engels">EN</button>
+                <button class="lang-btn" data-lang="fr" data-i18n="lang_fr" data-i18n-title="lang_fr_title" title="Frans">FR</button>
               </li>
             </ul>
           </div>
@@ -63,16 +66,17 @@
     <section id="home">
       <div class="home container">
         <div class="home-content">
-          <img src="img/LOGO-DST-klein-removebg-preview.png" alt="Logo De STrooperij" class="mobile-logo" />
-          <div class="logo-vintage-overlay"></div>
-          <div class="desktop-hex-logo">
-            <img src="img/LOGO-DST-klein-removebg-preview - Copy.png" alt="Logo De STrooperij" />
-          </div>
           <div class="home-titles">
-            <h1><span>Welcome</span></h1>
-            <h1><span>at</span></h1>
-            <h1><span>De STrooperij</span></h1>
+            <h1><span data-i18n="home_welcome">Welcome</span></h1>
+            <h1><span data-i18n="home_at">at</span></h1>
+            <h1><span data-i18n="home_dst">De STrooperij</span></h1>
           </div>
+          <div class="spraycan-anim-group home-only">
+          <img src="./img/can.png" alt="Spuitbus" class="spraycan-bounce" />
+          <img src="./img/spray.png" alt="Spray effect" class="spraycan-spray" style="opacity:0;" />
+          <img src="./img/LOGO-DST-klein-removebg-preview - Copy.png" alt="Gespoten logo" class="spraycan-logo" />
+          <img src="./img/drops.png" alt="Verfdruppel" class="spray-drip mobile-hide" />
+        </div>
         </div>
       </div>
     </section>
@@ -87,8 +91,8 @@
         </div>
         <div class="mission-download-icon">
           <a href="img/De_STrooperij_events_2025.pdf" download title="De STrooperij events 2025.pdf">
-            <img src="img/file.png" alt="Download" title="Download">
-            <span class="mission-download-label">De STrooperij 2025 - events.pdf</span>
+            <img src="img/file.png" alt="Download" title="Download" data-i18n-title="mission_download_title">
+            <span class="mission-download-label" data-i18n="mission_download_label">De STrooperij 2025 - events.pdf</span>
           </a>
         </div>
         <div class="mission-bottom">
@@ -120,19 +124,16 @@
         </div>
         <div class="all-events">
         <!-- Button rechtsboven buiten het event-item veld -->
-        <div class="event-external-btn-outer">
-          <div class="event-external-btn-wrapper">
-            <img src="img/Adobe Express - 1.png" alt="Bekijk graffiti foto's" class="event-external-btn-img" onclick="openGrafTSlideshow()" title="Graffiti Showroom" data-i18n-title="graffitiShowroomTooltip" />
-          </div>
-        </div>
     <!-- Slideshow Modal voor grafT -->
     <div id="grafTModal">
       <button class="grafT-close-btn" onclick="closeGrafTSlideshow()">✕</button>
+  <!-- Slideshow close button translation -->
+  <span style="display:none" data-i18n-title="slideshow_close_title"></span>
       <div id="grafTSlideshow">
         <img id="grafTImage" src="" alt="Graffiti" />
         <div class="grafT-nav-btns">
-          <button onclick="prevGrafTImage()">Vorige</button>
-          <button onclick="nextGrafTImage()">Volgende</button>
+          <button onclick="prevGrafTImage()" data-i18n="slideshow_prev">Vorige</button>
+          <button onclick="nextGrafTImage()" data-i18n="slideshow_next">Volgende</button>
         </div>
       </div>
     </div>
@@ -147,11 +148,30 @@
               </p>
             </div>
             <div class="event-img">
-              <img src="./img/Event2.jpg" alt="img" /><img 
+              <img src="./img/Event2.jpg" alt="img" />
+              <img 
                 class="video-icon" 
                 src="./img/movie-clip-click3.png" 
                 alt="video icon" 
                 onclick="openVideoModal('./img/Video SJ 2.mp4')" 
+                title="Play video" 
+                data-i18n-title="video_play_title" 
+              />
+              <img 
+                class="info-icon" 
+                src="./img/picture-show.png" 
+                alt="info icon" 
+                onclick="openGrafTSlideshow()" 
+                title="Picture slideshow" 
+                data-i18n-title="event_graffiti_slideshow_title" 
+              />
+              <img 
+                class="info-icon info-icon-top" 
+                src="./img/Infomap.png" 
+                alt="info icon" 
+                onclick="openInfoPopup('./img/WhatsApp Image 2025-08-27 at 07.56.30_f55dc03c.jpg')" 
+                title="Map" 
+                data-i18n-title="event_map_title" 
               />
             </div>
           </div>
@@ -168,6 +188,8 @@
                 src="./img/movie-clip-click3.png" 
                 alt="vertical video" 
                 onclick="openVideoModal('./img/Video TL 1.mp4')" 
+                title="Play video" 
+                data-i18n-title="video_play_title" 
               />
             </div>
           </div>

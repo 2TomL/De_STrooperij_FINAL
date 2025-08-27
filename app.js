@@ -91,8 +91,22 @@ const translations = {
         event3Title: "Barbecrew",
         event3Date: "september 2025",
         event3Text: "Een jaarlijks dankfeest voor alle vrijwilligers en sponsors van De STrooperij. Want zonder hen zou dit alles niet mogelijk zijn. Barbecrew draait om gezelligheid, dankbaarheid, en verbondenheid.",
-        event4Title: "Meer dan events",
-        event4Date: "Doorlopend en overal",
+      lang_nl: "NL",
+      lang_en: "EN",
+      lang_fr: "FR",
+      lang_nl_title: "Nederlands",
+      lang_en_title: "Engels",
+      lang_fr_title: "Frans",
+      home_welcome: "Welkom",
+      home_at: "bij",
+      home_dst: "De STrooperij",
+      mission_download_title: "Download het eventoverzicht (PDF)",
+      mission_download_label: "De STrooperij 2025 - events.pdf",
+      slideshow_prev: "Vorige",
+      slideshow_next: "Volgende",
+      slideshow_close_title: "Sluiten",
+      event_graffiti_slideshow_title: "Picture slideshow",
+      event_map_title: "Map",
         event4Text: "De STrooperij denkt verder dan events. Zo helpen we mee aan de renovatie van de Citadel en ondersteunen we creatieve jongeren via TEXTUUR – een loods aan de Nijverheidslaan die dienstdoet als creatieve uitvalsbasis. Hier kunnen jongeren muziek maken, creëren en experimenteren.",
         aboutTitle: "Over ons",
         aboutSubtitle: "De CREW",
@@ -103,7 +117,7 @@ const translations = {
         emailTitle: "Email",
         emailText: "summerjam2.0@hotmail.com",
         volunteerTitle: "Vrijwilligers",
-        volunteerText: "Wil je meehelpen op ons volgende event?",
+        volunteerText: "Meehelpen op ons volgende event?",
         footerText: "Gemaakt door Tom Lamers – 2025",
         footerFacebookTooltip: "Volg ons op Facebook",
         footerInstagramTooltip: "Volg ons op Instagram"
@@ -140,6 +154,22 @@ const translations = {
         event3Text: "An annual thank-you party for all the volunteers and sponsors of De STrooperij. Because none of this would be possible without them. Barbecrew is all about fun, gratitude, and connection.",
         event4Title: "More than events",
         event4Date: "Ongoing and everywhere",
+      lang_nl: "NL",
+      lang_en: "EN",
+      lang_fr: "FR",
+      lang_nl_title: "Dutch",
+      lang_en_title: "English",
+      lang_fr_title: "French",
+      home_welcome: "Welcome",
+      home_at: "at",
+      home_dst: "De STrooperij",
+      mission_download_title: "Download the event overview (PDF)",
+      mission_download_label: "De STrooperij 2025 - events.pdf",
+  slideshow_prev: "Previous",
+  slideshow_next: "Next",
+  slideshow_close_title: "Close",
+  event_graffiti_slideshow_title: "Picture slideshow",
+  event_map_title: "Map",
         event4Text: "De STrooperij thinks beyond events. We contribute to the renovation of the Citadel and support creative youth through TEXTUUR – a warehouse on Nijverheidslaan that serves as a creative base. Here, young people can make music, create, and experiment.",
         aboutTitle: "About us",
         aboutSubtitle: "The CREW",
@@ -193,14 +223,19 @@ const translations = {
         aboutText: "De STrooperij a commencé comme un groupe d’amis passionnés par leur ville, DieST. Au fil des années, le collectif est devenu une ASBL qui rend la culture et le sport accessibles à tous. Grâce au soutien des bénévoles, des associations, des sponsors et de la ville de DieST, leur impact ne cesse de croître. Il s’agit de donner des opportunités, de collaborer, et de construire une communauté chaleureuse et créative.",
         contactTitle: "Contact",
         ticketTitle: "Tickets",
-        ticketText: "Achetez ici",
-        emailTitle: "Email",
-        emailText: "summerjam2.0@hotmail.com",
-        volunteerTitle: "Bénévoles",
-        volunteerText: "Envie de nous aider lors de notre prochain événement ?",
-        footerText: "Créé par Tom Lamers – 2025",
-        footerFacebookTooltip: "Suivez-nous sur Facebook",
-        footerInstagramTooltip: "Suivez-nous sur Instagram"
+    ticketText: "Achetez ici",
+    slideshow_prev: "Précédent",
+    slideshow_next: "Suivant",
+    slideshow_close_title: "Fermer",
+    event_graffiti_slideshow_title: "Picture slideshow",
+    event_map_title: "Map",
+    emailTitle: "Email",
+    emailText: "summerjam2.0@hotmail.com",
+    volunteerTitle: "Bénévoles",
+    volunteerText: "Envie de nous aider lors de notre prochain événement ?",
+    footerText: "Créé par Tom Lamers – 2025",
+    footerFacebookTooltip: "Suivez-nous sur Facebook",
+    footerInstagramTooltip: "Suivez-nous sur Instagram"
     }
 };
 
@@ -227,23 +262,36 @@ function closeVideoModal() {
 
 // --- Graffiti Slideshow ---
 let grafTImages = [
-  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.37_f54d8539.jpg',
-  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.37_e086e3bf.jpg',
-  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.37_b1452ba7.jpg',
-  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.37_a17fd617.jpg',
-  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.37_92334d94.jpg',
-  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.37_6a1d714f.jpg',
-  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.37_370e8650.jpg',
-  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.37_1cb98c8a.jpg',
-  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.36_f94bfd56.jpg',
-  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.36_dd6e6790.jpg',
-  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.36_c9565aac.jpg',
-  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.36_b2f8f34c.jpg',
-  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.36_97d15007.jpg',
-  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.36_34b8d3db.jpg',
-  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.36_2dc345e6.jpg',
-  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.36_243e04a1.jpg',
-  'img/grafT/WhatsApp Image 2025-08-15 at 10.05.36_1be166a2.jpg'
+  'img/SJ-2025/1-IMG-20250827-WA0006.jpg',
+  'img/SJ-2025/2-WhatsApp Image 2025-08-15 at 10.05.36_34b8d3db.jpg',
+  'img/SJ-2025/3-IMG-20250827-WA0008.jpg',
+  'img/SJ-2025/4-WhatsApp Image 2025-08-15 at 10.05.36_97d15007.jpg',
+  'img/SJ-2025/5-IMG-20250827-WA0009.jpg',
+  'img/SJ-2025/6-WhatsApp Image 2025-08-15 at 10.05.36_2dc345e6.jpg',
+  'img/SJ-2025/7-IMG-20250827-WA0002.jpg',
+  'img/SJ-2025/8-WhatsApp Image 2025-08-15 at 10.05.36_1be166a2.jpg',
+  'img/SJ-2025/9-IMG-20250827-WA0004.jpg',
+  'img/SJ-2025/10-WhatsApp Image 2025-08-15 at 10.05.36_243e04a1.jpg',
+  'img/SJ-2025/11-IMG-20250827-WA0011.jpg',
+  'img/SJ-2025/12-WhatsApp Image 2025-08-15 at 10.05.36_b2f8f34c.jpg',
+  'img/SJ-2025/13-IMG-20250827-WA0010.jpg',
+  'img/SJ-2025/14-IMG-20250827-WA0007.jpg',
+  'img/SJ-2025/15-WhatsApp Image 2025-08-15 at 10.05.36_c9565aac.jpg',
+  'img/SJ-2025/16-WhatsApp Image 2025-08-15 at 10.05.36_dd6e6790.jpg',
+  'img/SJ-2025/17-IMG-20250827-WA0012.jpg',
+  'img/SJ-2025/18-WhatsApp Image 2025-08-15 at 10.05.36_f94bfd56.jpg',
+  'img/SJ-2025/19-WhatsApp Image 2025-08-15 at 10.05.37_1cb98c8a.jpg',
+  'img/SJ-2025/20-WhatsApp Image 2025-08-27 at 07.56.30_f55dc03c.jpg',
+  // overige foto's random
+  'img/SJ-2025/WhatsApp Image 2025-08-15 at 10.05.37_370e8650.jpg',
+  'img/SJ-2025/WhatsApp Image 2025-08-15 at 10.05.37_6a1d714f.jpg',
+  'img/SJ-2025/WhatsApp Image 2025-08-15 at 10.05.37_92334d94.jpg',
+  'img/SJ-2025/WhatsApp Image 2025-08-15 at 10.05.37_a17fd617.jpg',
+  'img/SJ-2025/WhatsApp Image 2025-08-15 at 10.05.37_b1452ba7.jpg',
+  'img/SJ-2025/WhatsApp Image 2025-08-15 at 10.05.37_e086e3bf.jpg',
+  'img/SJ-2025/WhatsApp Image 2025-08-15 at 10.05.37_f54d8539.jpg',
+  'img/SJ-2025/IMG-20250827-WA0003.jpg',
+  'img/SJ-2025/IMG-20250827-WA0005.jpg'
 ];
 let grafTIndex = 0;
 window.openGrafTSlideshow = function() {
@@ -271,3 +319,119 @@ window.prevGrafTImage = function() {
   }
 }
 // --- einde slideshow ---
+// --- Swipe en keyboard support voor slideshow ---
+document.addEventListener('DOMContentLoaded', function() {
+  var modal = document.getElementById('grafTModal');
+  var touchStartX = null;
+  var touchEndX = null;
+
+  function isModalOpen() {
+    return modal && (modal.style.display === 'flex' || modal.style.display === 'block');
+  }
+
+  // Touch events voor mobiel
+  if (modal) {
+    modal.addEventListener('touchstart', function(e) {
+      if (e.touches.length === 1) {
+        touchStartX = e.touches[0].clientX;
+      }
+    });
+    modal.addEventListener('touchend', function(e) {
+      if (touchStartX !== null && e.changedTouches.length === 1) {
+        touchEndX = e.changedTouches[0].clientX;
+        if (touchEndX - touchStartX > 50) {
+          prevGrafTImage(); // swipe rechts
+        } else if (touchStartX - touchEndX > 50) {
+          nextGrafTImage(); // swipe links
+        }
+        touchStartX = null;
+        touchEndX = null;
+      }
+    });
+  }
+
+  // Keyboard events voor desktop
+  document.addEventListener('keydown', function(e) {
+    if (isModalOpen()) {
+      if (e.key === 'ArrowLeft') {
+        prevGrafTImage();
+      } else if (e.key === 'ArrowRight') {
+        nextGrafTImage();
+      }
+    }
+  });
+});
+// --- einde swipe/keyboard ---
+// Info popup voor Event2.jpg
+window.openInfoPopup = function(imgPath) {
+  // Hergebruik de grafTModal, maar toon alleen de gewenste foto
+  var modal = document.getElementById('grafTModal');
+  var img = document.getElementById('grafTImage');
+  img.src = imgPath;
+  // Verberg navigatieknoppen
+  var navBtns = document.querySelector('.grafT-nav-btns');
+  if (navBtns) navBtns.style.display = 'none';
+  modal.style.display = 'flex';
+  // Sluiten via X werkt zoals gewoonlijk
+}
+
+// Zorg dat bij sluiten van modal de navigatieknoppen weer zichtbaar zijn
+var grafTCloseBtn = document.querySelector('.grafT-close-btn');
+if (grafTCloseBtn) {
+  grafTCloseBtn.addEventListener('click', function() {
+    var navBtns = document.querySelector('.grafT-nav-btns');
+    if (navBtns) navBtns.style.display = '';
+  });
+}
+document.addEventListener('DOMContentLoaded', function() {
+  function resetSpraycan() {
+    const spraycan = document.querySelector('.spraycan-bounce');
+    if (spraycan) {
+      spraycan.src = './img/can.png';
+      spraycan.classList.remove('spraycan-bounce-out');
+      spraycan.style.opacity = '';
+      spraycan.style.animation = '';
+      // Force reflow to restart animation
+      void spraycan.offsetWidth;
+      spraycan.style.animation = spraycan.classList.contains('home-only')
+        ? 'spraycanIn 1.2s cubic-bezier(.68,-0.55,.27,1.55) 0.3s forwards' : '';
+    }
+  }
+
+  // Reset bij navigatie naar home
+  window.addEventListener('hashchange', function() {
+    if (location.hash === '#home' || location.hash === '') {
+      resetSpraycan();
+    }
+  });
+
+  // Initieel bij laden
+  if (location.hash === '#home' || location.hash === '') {
+    resetSpraycan();
+  }
+
+  // Knipoog en bounce out na sprayen
+  const spraycan = document.querySelector('.spraycan-bounce');
+  if (spraycan) {
+    spraycan.addEventListener('animationend', function(e) {
+      if (e.animationName === 'spraycanIn') {
+        // Spray effect tonen
+        const spray = document.querySelector('.spraycan-spray');
+        if (spray) {
+          spray.style.opacity = '1';
+        }
+        // Spray effect verbergen net voor can2 verschijnt
+        setTimeout(function() {
+          if (spray) spray.style.opacity = '0';
+        }, 1500 + 80); // Spray verdwijnt sneller
+        setTimeout(function() {
+          spraycan.src = './img/can2.png';
+          spraycan.style.opacity = '1'; // Zorg dat can2 volledig zichtbaar is
+        }, 1500 + 500); // 1.5s animatie + 0.7s wachten
+        setTimeout(function() {
+          spraycan.classList.add('spraycan-bounce-out');
+        }, 1500 + 500 + 10000); // 10s smiley, dan bounce out
+      }
+    });
+  }
+});
