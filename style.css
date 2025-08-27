@@ -1,6 +1,6 @@
 @media only screen and (max-width: 450px) {
   .spraycan-anim-group {
-    margin-top: 140px !important;
+    top: 100px !important;
     margin-left: 23px !important;
   }
   .home-content {
