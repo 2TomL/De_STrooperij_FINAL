@@ -1568,22 +1568,22 @@ filter: drop-shadow(0 0 32px #fff) drop-shadow(0 0 48px #25305f);
   @keyframes spraylogoIn {
     0% {
       opacity: 0;
-      filter: blur(24px) brightness(0.7);
+      filter: sepia(0.8) contrast(0.7) brightness(0.8) blur(2px);
       transform: translateX(10%) translateY(0%) scale(0.7);
     }
     60% {
       opacity: 0.7;
-      filter: blur(8px) brightness(1);
-      transform: translateX(10%) translateY(0%) scale(1.1);
+      filter: sepia(0.6) contrast(1.2) brightness(1) blur(0.5px);
+      transform: translateX(10%) translateY(0%) scale(1.05);
     }
     80% {
       opacity: 1;
-      filter: blur(2px) brightness(1.1);
-      transform: translateX(10%) translateY(0%) scale(0.95);
+      filter: sepia(0.5) contrast(1.1) brightness(0.95) blur(0);
+      transform: translateX(10%) translateY(0%) scale(0.98);
     }
     100% {
       opacity: 1;
-      filter: blur(0px) brightness(1);
+      filter: sepia(0.5) contrast(1.1) brightness(0.95) blur(0);
       transform: translateX(10%) translateY(0%) scale(1);
     }
   }
@@ -1791,5 +1791,12 @@ section:not(#home) .home-only {
     opacity: 0;
     right: 160px;
     transform: translateY(-50%) scale(0.7) rotate(20deg);
+  }
+}
+@media (max-width: 605px) {
+  .spraycan-logo {
+    position: relative;
+    top: 35px;
+    left: 18px;
   }
 }
