@@ -8,6 +8,9 @@
   }
 }
 @media (max-width: 600px) {
+  .spraycan-anim-group {
+    top: 160px !important;
+  }
   .spraycan-spray {
     left: 55vw !important;
     top: -13vw !important;
