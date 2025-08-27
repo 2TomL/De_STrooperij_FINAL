@@ -1,7 +1,10 @@
 @media only screen and (max-width: 450px) {
   .home-only .spraycan-anim-group {
-    margin-top: 100px !important;
-    margin-left: 18px !important;
+    margin-top: 140px !important;
+    margin-left: 23px !important;
+  }
+  .home-content {
+    padding-top: 20px !important;
   }
 }
 @media (max-width: 600px) {
