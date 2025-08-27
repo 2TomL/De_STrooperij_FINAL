@@ -1,7 +1,7 @@
 /* --- Forceer logo positie op kleine schermen --- */
 @media (max-width: 600px) {
   .spraycan-anim-group {
-    top: 50px !important;
+  top: 30px !important;
     right: auto !important;
     left: 10px !important;
   }
