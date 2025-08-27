@@ -1,3 +1,15 @@
+@media (max-width: 605px) {
+  .spraycan-anim-group {
+    top: 35px !important;
+    left: 18px !important;
+  }
+}
+@media (max-width: 605px) {
+  .spraycan-anim-group {
+    top: 35px !important;
+    left: 18px !important;
+  }
+}
 /* --- Forceer logo positie op kleine schermen --- */
 @media (max-width: 700px) {
   html, body {
