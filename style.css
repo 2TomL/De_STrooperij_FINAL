@@ -1,3 +1,11 @@
+.custom-modal-content.totalLoods-bg {
+  background-image: url('./img/Event4bisInsta.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.custom-modal-inner .totalLoods-title {
+  margin-top: 0;
+}
 @media (max-width: 700px) {
   .all-events {
     display: flex;
@@ -23,8 +31,16 @@
   border-radius: 8px;
 }
 #totalLoodsInfoModal .custom-modal-content {
-  scrollbar-width: thin;
-  scrollbar-color: #ff9900 rgba(0,0,0,0.08);
+  /* Scrollbar styling for modern browsers is handled below for webkit */
+}
+#totalLoodsInfoModal .custom-modal-content::-webkit-scrollbar {
+  width: 7px;
+  background: rgba(0,0,0,0.08);
+  border-radius: 8px;
+}
+#totalLoodsInfoModal .custom-modal-content::-webkit-scrollbar-thumb {
+  background: #ff9900;
+  border-radius: 8px;
 }
 /* --- Custom Modal for Total Loods Info --- */
 #totalLoodsInfoModal.custom-modal {
@@ -40,25 +56,7 @@
   align-items: center;
 }
 
-#totalLoodsInfoModal .custom-modal-content {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-  padding: 0;
-  max-width: 95vw;
-  width: 480px;
-  max-height: 90vh;
-  overflow-y: auto;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  background-size: cover;
-  background-position: center;
-  border: 4px double #ff9900;
-  outline: 3px solid #00172e;
-  outline-offset: -8px;
-}
+
 
 /* Make all text white and blue more transparent */
 #totalLoodsInfoModal .custom-modal-inner {
