@@ -83,8 +83,10 @@ const translations = {
         musicText: "Beats, livemuziek en DJ-sets brengen elk event tot leven. Tijdens Silent Disco en andere evenementen krijgen ook jonge, opkomende talenten een podium. De STrooperij gelooft in de kracht van muziek om mensen te verbinden.",
         eventsTitle: "EVENTS",
         event1Title: "Total Loods",
-        event1Date: "april 2025",
-        event1Text: "Op de site van de Citadel organiseert De STrooperij opnieuw Total Loods: een dag vol animaties en activiteiten, gevolgd door een avond met een silent disco (drie genres). Jonge DJ’s krijgen een kans op het podium. De toegang is gratis – enkel de hoofdtelefoon betaal je zelf.",
+        event1Date: "april 2026",
+        event1Text: "Op de site van de Citadel organiseert De STrooperij opnieuw Total Loods: een dag vol animaties en activiteiten, gevolgd door een avond met een silent disco. Jonge DJ’s krijgen een kans op het podium. De toegang is gratis – enkel de hoofdtelefoon betaal je zelf.",
+        event1register: "Inschrijven Silent Disco",
+        silentdiscoTooltip: "Silent Disco Inschrijven",
         event2Title: "Summer Jam",
         event2Date: "augustus 2025",
         event2Text: "Terug in het Warandepark – de thuisbasis – brengt Summer Jam opnieuw een dag vol urban sports en muziek. Verwacht een skatecontest, graffiti-jam, 3on3 basketbal, hiphop-breakdance, freerunning en kinderanimatie. ’s Avonds sluiten we af met een spectaculaire feest in het park.",
@@ -118,9 +120,42 @@ const translations = {
         emailText: "summerjam2.0@hotmail.com",
         volunteerTitle: "Vrijwilligers",
         volunteerText: "Meehelpen op ons volgende event?",
-        footerText: "Gemaakt door Tom Lamers – 2025",
+        footerByPrefix: "Gemaakt door",
         footerFacebookTooltip: "Volg ons op Facebook",
-        footerInstagramTooltip: "Volg ons op Instagram"
+        footerInstagramTooltip: "Volg ons op Instagram",
+        footerAuthorTooltip: "Hier mijn werk",
+        totalLoods_title: "TOTAL LOODS",
+        totalLoods_subtitle: "⚠️ Graffitifestival met straatsport en silent disco ⚠️",
+        totalLoods_location: "Loods Citadel Diest",
+        totalLoods_bar_title: "BAR LOODS",
+        totalLoods_bar_date: "📅 Vrijdag, 24 april 2026 van 16u tot 23u",
+        totalLoods_games_title: "GRAFFITI AND GAMES:",
+        totalLoods_game_pingpong: "Ping pong",
+        totalLoods_game_kicker: "Kicker",
+        totalLoods_game_flipperkast: "Flipperkast",
+        totalLoods_game_boogschieten: "Boogschieten",
+        totalLoods_game_darts: "Darts",
+        totalLoods_game_spikeball: "Spike ball",
+        totalLoods_game_kubb: "Kubb",
+        totalLoods_game_nagelskloppen: "Nagels kloppen",
+        totalLoods_food_quesa: "FOOD: quesadillas",
+        totalLoods_total_title: "TOTAL LOODS",
+        totalLoods_total_date: "📅 Zaterdag, 25 april 2026 van 13u tot 19u",
+        totalLoods_panna: "Pannatornooi <br>✔️ Alle leeftijden <br>✔️ Demo van Martijn Debbaut (15u15)",
+        totalLoods_graffitijam: "Graffitijam: Cecko, Tuzq, Kiwi, 2.Dirty, Nupstr, Meerkat, L’Oxien, Stab, Skill, Rise, Sawer, Smok, Deejoohcee, Bird, Ridha, K.Shit, Jayder, Creol",
+        totalLoods_skate: "Skatecontest:<br>✔️ 13u – 14u30: beginners / kids (by Nina Skates)<br>✔️ 14u30-18u: gevorderden (by Level 8 )",
+        totalLoods_breakdance: "Breakdance: demo’s en initiatie (by U2S Breaking Academy)",
+        totalLoods_freerun: "Free Running Area (by FreeRunningDiest)",
+        totalLoods_hiphop: "Hip Hop Flash Dances (by Studio YO!)",
+        totalLoods_kids: "Kids corner + obstakel luchtkussen",
+        totalLoods_inschrijven: "➡️ Inschrijven ter plaatse!",
+        totalLoods_food_pizza: "FOOD: comfort pizza by COMPA",
+        totalLoods_silent_title: "SILENT DISCO",
+        totalLoods_silent_date: "📅 Zaterdag, 25 april 2026 van 21u tot 3u",
+        totalLoods_silent_3bars: "3 discobars",
+        totalLoods_silent_line1: "Les Craven – Kim Martini - Conform / Makadam",
+        totalLoods_silent_line2: "Brainfart Deluxe ft. WD-40 - Discobar De Max - Dafi",
+        totalLoods_silent_line3: "DJ 21 - Jack – Berre"
     },
   en: {
     graffitiShowroomTooltip: "Graffiti Showroom",
@@ -144,8 +179,10 @@ const translations = {
         musicText: "Beats, live music, and DJ sets bring every event to life. During Silent Disco and other events, young, emerging talents also get their moment on stage. De STrooperij believes in the power of music to connect people.",
         eventsTitle: "EVENTS",
         event1Title: "Total Loods",
-        event1Date: "April, 2025",
-        event1Text: "At the Citadel site, De STrooperij presents another edition of Total Loods: a day full of animations and activities, followed by an evening Silent Disco (three genres). Young DJs get their time in the spotlight. Entry is free – you only pay for the headphones.",
+        event1Date: "April 2026",
+        event1Text: "At the Citadel site, De STrooperij presents another edition of Total Loods: a day full of animations and activities, followed by an evening Silent Disco. Young DJs get their time in the spotlight. Entry is free – you only pay for the headphones.",
+        event1register: "Register Silent Disco",
+        silentdiscoTooltip: "Register for Silent Disco",
         event2Title: "Summer Jam",
         event2Date: "August, 2025",
         event2Text: "Back in Warande Park – our home base – Summer Jam brings another day of urban sports and music. Expect a skate contest, graffiti jam, 3-on-3 basketball, hiphop-breakdance, freerunning, and kids entertainment. In the evening, we wrap up with a spectacular party in the park.",
@@ -181,9 +218,42 @@ const translations = {
         emailText: "summerjam2.0@hotmail.com",
         volunteerTitle: "Volunteers",
         volunteerText: "Want to help out at our next event?",
-        footerText: "Built by Tom Lamers – 2025",
+        footerByPrefix: "Built by",
         footerFacebookTooltip: "Follow us on Facebook",
         footerInstagramTooltip: "Follow us on Instagram"
+      , footerAuthorTooltip: "See my work",
+      totalLoods_title: "TOTAL LOODS",
+      totalLoods_subtitle: "⚠️ Graffiti festival with street sports and silent disco ⚠️",
+      totalLoods_location: "Citadel Warehouse Diest",
+      totalLoods_bar_title: "BAR LOODS",
+      totalLoods_bar_date: "📅 Friday, April 24, 2026 from 16:00 to 23:00",
+      totalLoods_games_title: "GRAFFITI AND GAMES:",
+      totalLoods_game_pingpong: "Ping pong",
+      totalLoods_game_kicker: "Table football",
+      totalLoods_game_flipperkast: "Pinball",
+      totalLoods_game_boogschieten: "Archery",
+      totalLoods_game_darts: "Darts",
+      totalLoods_game_spikeball: "Spike ball",
+      totalLoods_game_kubb: "Kubb",
+      totalLoods_game_nagelskloppen: "Hammer the nails",
+      totalLoods_food_quesa: "FOOD: quesadillas",
+      totalLoods_total_title: "TOTAL LOODS",
+      totalLoods_total_date: "📅 Saturday, April 25, 2026 from 13:00 to 19:00",
+      totalLoods_panna: "Panna tournament <br>✔️ All ages <br>✔️ Demo by Martijn Debbaut (15:15)",
+      totalLoods_graffitijam: "Graffiti jam: Cecko, Tuzq, Kiwi, 2.Dirty, Nupstr, Meerkat, L’Oxien, Stab, Skill, Rise, Sawer, Smok, Deejoohcee, Bird, Ridha, K.Shit, Jayder, Creol",
+      totalLoods_skate: "Skate contest:<br>✔️ 13:00 – 14:30: beginners / kids (by Nina Skates)<br>✔️ 14:30-18:00: advanced (by Level 8)",
+      totalLoods_breakdance: "Breakdance: demos and initiation (by U2S Breaking Academy)",
+      totalLoods_freerun: "Free Running Area (by FreeRunningDiest)",
+      totalLoods_hiphop: "Hip Hop Flash Dances (by Studio YO!)",
+      totalLoods_kids: "Kids corner + obstacle bouncy castle",
+      totalLoods_inschrijven: "➡️ Register on site!",
+      totalLoods_food_pizza: "FOOD: comfort pizza by COMPA",
+      totalLoods_silent_title: "SILENT DISCO",
+      totalLoods_silent_date: "📅 Saturday, April 25, 2026 from 21:00 to 3:00",
+      totalLoods_silent_3bars: "3 disco bars",
+      totalLoods_silent_line1: "Les Craven – Kim Martini - Conform / Makadam",
+      totalLoods_silent_line2: "Brainfart Deluxe ft. WD-40 - Discobar De Max - Dafi",
+      totalLoods_silent_line3: "DJ 21 - Jack – Berre"
     },
   fr: {
     graffitiShowroomTooltip: "Showroom Graffiti",
@@ -207,8 +277,10 @@ const translations = {
         musicText: "Beats, la musique live et des DJ sets donnent vie à chaque événement. Lors de la Silent Disco et d'autres événements, de jeunes talents émergents montent également sur scène. De STrooperij croit au pouvoir de la musique pour rassembler les gens.",
         eventsTitle: "ÉVÉNEMENTS",
         event1Title: "Total Loods",
-        event1Date: "avril 2025",
-        event1Text: "Sur le site de la Citadelle, De STrooperij organise une nouvelle édition de Total Loods : une journée pleine d'animations et d'activités, suivie d'une soirée Silent Disco (trois styles). De jeunes DJ auront l'occasion de se produire. L'entrée est gratuite – seul le casque est à votre charge.",
+        event1Date: "avril 2026",
+        event1Text: "Sur le site de la Citadelle, De STrooperij organise une nouvelle édition de Total Loods : une journée pleine d'animations et d'activités, suivie d'une soirée Silent Disco. De jeunes DJ auront l'occasion de se produire. L'entrée est gratuite – seul le casque est à votre charge.",
+        event1register: "Inscription Silent Disco",
+        silentdiscoTooltip: "Inscription Silent Disco",
         event2Title: "Summer Jam",
         event2Date: "août 2025",
         event2Text: "De retour au parc Warande – notre base – le Summer Jam propose à nouveau une journée de sports urbains et de musique. Attendez-vous à un concours de skate, un graffiti jam, du basket 3 contre 3, du hiphop et breakdance, du freerun et des animations pour enfants. La soirée se termine par un fête spectaculaire dans le parc.",
@@ -233,9 +305,42 @@ const translations = {
     emailText: "summerjam2.0@hotmail.com",
     volunteerTitle: "Bénévoles",
     volunteerText: "Envie de nous aider lors de notre prochain événement ?",
-    footerText: "Créé par Tom Lamers – 2025",
+  footerByPrefix: "Créé par",
     footerFacebookTooltip: "Suivez-nous sur Facebook",
-    footerInstagramTooltip: "Suivez-nous sur Instagram"
+  footerInstagramTooltip: "Suivez-nous sur Instagram"
+  , footerAuthorTooltip: "Voir mon travail",
+  totalLoods_title: "TOTAL LOODS",
+  totalLoods_subtitle: "⚠️ Festival graffiti avec sports urbains et silent disco ⚠️",
+  totalLoods_location: "Entrepôt Citadelle Diest",
+  totalLoods_bar_title: "BAR LOODS",
+  totalLoods_bar_date: "📅 Vendredi 24 avril 2026 de 16h à 23h",
+  totalLoods_games_title: "GRAFFITI ET JEUX :",
+  totalLoods_game_pingpong: "Ping pong",
+  totalLoods_game_kicker: "Baby-foot",
+  totalLoods_game_flipperkast: "Flipper",
+  totalLoods_game_boogschieten: "Tir à l’arc",
+  totalLoods_game_darts: "Fléchettes",
+  totalLoods_game_spikeball: "Spike ball",
+  totalLoods_game_kubb: "Kubb",
+  totalLoods_game_nagelskloppen: "Taper des clous",
+  totalLoods_food_quesa: "FOOD : quesadillas",
+  totalLoods_total_title: "TOTAL LOODS",
+  totalLoods_total_date: "📅 Samedi 25 avril 2026 de 13h à 19h",
+  totalLoods_panna: "Tournoi panna <br>✔️ Tous âges <br>✔️ Démo de Martijn Debbaut (15h15)",
+  totalLoods_graffitijam: "Graffitijam : Cecko, Tuzq, Kiwi, 2.Dirty, Nupstr, Meerkat, L’Oxien, Stab, Skill, Rise, Sawer, Smok, Deejoohcee, Bird, Ridha, K.Shit, Jayder, Creol",
+  totalLoods_skate: "Skatecontest :<br>✔️ 13h – 14h30 : débutants / enfants (par Nina Skates)<br>✔️ 14h30-18h : avancés (par Level 8)",
+  totalLoods_breakdance: "Breakdance : démos et initiation (par U2S Breaking Academy)",
+  totalLoods_freerun: "Free Running Area (par FreeRunningDiest)",
+  totalLoods_hiphop: "Hip Hop Flash Dances (par Studio YO!)",
+  totalLoods_kids: "Kids corner + château gonflable obstacle",
+  totalLoods_inschrijven: "➡️ Inscription sur place !",
+  totalLoods_food_pizza: "FOOD : comfort pizza by COMPA",
+  totalLoods_silent_title: "SILENT DISCO",
+  totalLoods_silent_date: "📅 Samedi 25 avril 2026 de 21h à 3h",
+  totalLoods_silent_3bars: "3 discobars",
+  totalLoods_silent_line1: "Les Craven – Kim Martini - Conform / Makadam",
+  totalLoods_silent_line2: "Brainfart Deluxe ft. WD-40 - Discobar De Max - Dafi",
+  totalLoods_silent_line3: "DJ 21 - Jack – Berre"
     }
 };
 
@@ -434,4 +539,23 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
+});
+
+// --- Hexagon Logo Animation ---
+document.addEventListener('DOMContentLoaded', function() {
+  // Wacht tot de hex is getekend, toon dan het logo
+  setTimeout(() => {
+    const hexLogo = document.querySelector('.hex-logo');
+    const hexShape = document.querySelector('.hex-shape');
+    if (hexLogo) {
+      hexLogo.style.opacity = 1;
+      // Trigger scale-in on mobile via CSS
+      hexLogo.classList.add('visible');
+    }
+    // Laat de blauwe zeshoek verdwijnen wanneer het logo verschijnt
+    if (hexShape) {
+      hexShape.style.opacity = 0;
+      hexShape.style.transition = 'opacity 0.5s ease-out';
+    }
+  }, 2200);
 });

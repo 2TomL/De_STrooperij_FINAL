@@ -66,16 +66,29 @@
     <section id="home">
       <div class="home container">
         <div class="home-content">
+          
+          <!-- 🔷 Hex + Logo Element -->
           <div class="home-titles">
             <h1><span data-i18n="home_welcome">Welcome</span></h1>
             <h1><span data-i18n="home_at">at</span></h1>
             <h1><span data-i18n="home_dst">De STrooperij</span></h1>
           </div>
-          <div class="spraycan-anim-group home-only">
-          <!-- Spuitbus en spray animatie verwijderd -->
-          <img src="./img/LOGO-DST-klein-removebg-preview - Copy.png" alt="Gespoten logo" class="spraycan-logo" />
-          <img src="./img/drops.png" alt="Verfdruppel" class="spray-drip mobile-hide" />
-        </div>
+          <div class="hex-container">
+            <svg class="hex-shape" viewBox="0 0 200 230">
+              <polygon
+                points="100,10 190,65 190,165 100,220 10,165 10,65"
+                stroke="#0B1D5A"
+                stroke-width="4"
+                fill="transparent"
+                stroke-dasharray="700"
+                stroke-dashoffset="700"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <img class="hex-logo" src="./img/LOGO-DST-klein-removebg-preview.png" alt="De STrooperij Logo">
+          </div>
+          
         </div>
       </div>
     </section>
@@ -137,13 +150,97 @@
       </div>
     </div>
   
-          <div class="event-item">
+           <div class="event-item">
+            <div class="event-info">
+              <h1 data-i18n="event1Title">Total Loods</h1>
+              <h2 data-i18n="event1Date">april 2026</h2>
+              <p data-i18n="event1Text">Op de site van de Citadel organiseert De STrooperij opnieuw Total Loods: een dag vol animaties en activiteiten, gevolgd door een avond met een silent disco. Jonge DJ’s krijgen een kans op het podium. De toegang is gratis – enkel de hoofdtelefoon betaal je zelf.</p>
+              <p class="event1register">🎧  
+                <a href="https://total-loods-silent-disco.eventsquare.store/nl/qgdx5iryyy4e/fletk9kesrmj" target="_blank" rel="noopener" data-i18n="event1register" title="Silent Disco Inschrijven" data-i18n-title="silentdiscoTooltip">Inschrijven Silent Disco</a>
+              </p>
+            </div>
+            <div class="event-img">
+              <img src="./img/Event1-2.jpg" alt="img" />
+              <img 
+                class="video-icon" 
+                src="./img/movie-clip-click3.png" 
+                alt="vertical video" 
+                onclick="openVideoModal('./img/Video TL 1.mp4')" 
+                title="Play video" 
+                data-i18n-title="video_play_title" 
+              />
+              <img 
+                class="info-icon info-icon-top" 
+                src="./img/Infomap.png" 
+                alt="info icon" 
+                onclick="openTotaLoodsInfoPopup()" 
+                title="Info" 
+                data-i18n-title="event_info_title" 
+              />
+                <!-- Total Loods Info Popup -->
+                <div id="totalLoodsInfoModal" class="custom-modal">
+                  <div class="custom-modal-content" style="background-image: url('./img/Event4bisInsta.jpg'); background-size: cover; background-position: center;">
+                    <button class="custom-modal-close" onclick="closeTotaLoodsInfoPopup()">✕</button>
+                    <div class="custom-modal-inner">
+                      <h2 style="margin-top:0;" data-i18n="totalLoods_title">TOTAL LOODS</h2>
+                      <p><b data-i18n="totalLoods_subtitle">⚠️ Graffitifestival met straatsport en silent disco ⚠️</b></p>
+                      <p>🚩 <b data-i18n="totalLoods_location">Loods Citadel Diest</b></p>
+                      <h3 data-i18n="totalLoods_bar_title">BAR LOODS</h3>
+                      <p data-i18n="totalLoods_bar_date">📅 Vrijdag, 24 april van 16u tot 23u</p>
+                      <b data-i18n="totalLoods_games_title">GRAFFITI AND GAMES:</b>
+                      <ul>
+                        <li data-i18n="totalLoods_game_pingpong">Ping pong</li>
+                        <li data-i18n="totalLoods_game_kicker">Kicker</li>
+                        <li data-i18n="totalLoods_game_flipperkast">Flipperkast</li>
+                        <li data-i18n="totalLoods_game_boogschieten">Boogschieten</li>
+                        <li data-i18n="totalLoods_game_darts">Darts</li>
+                        <li data-i18n="totalLoods_game_spikeball">Spike ball</li>
+                        <li data-i18n="totalLoods_game_kubb">Kubb</li>
+                        <li data-i18n="totalLoods_game_nagelskloppen">Nagels kloppen</li>
+                      </ul>
+                      <p>🌮 <b data-i18n="totalLoods_food_quesa">FOOD: quesadillas</b> 🌮</p>
+                      <h3 data-i18n="totalLoods_total_title">TOTAL LOODS</h3>
+                      <p data-i18n="totalLoods_total_date">📅 Zaterdag, 25 april 2026 van 13u tot 19u</p>
+                      <ul>
+                        <li data-i18n="totalLoods_panna">Pannatornooi <br>✔️ Alle leeftijden <br>✔️ Demo van Martijn Debbaut (15u15)</li>
+                        <li data-i18n="totalLoods_graffitijam">Graffitijam: Cecko, Tuzq, Kiwi, 2.Dirty, Nupstr, Meerkat, L’Oxien, Stab, Skill, Rise, Sawer, Smok, Deejoohcee, Bird, Ridha, K.Shit, Jayder, Creol</li>
+                        <li data-i18n="totalLoods_skate">Skatecontest:<br>✔️ 13u – 14u30: beginners / kids (by Nina Skates)<br>✔️ 14u30-18u: gevorderden (by Level 8 )</li>
+                        <li data-i18n="totalLoods_breakdance">Breakdance: demo’s en initiatie (by U2S Breaking Academy)</li>
+                        <li data-i18n="totalLoods_freerun">Free Running Area (by FreeRunningDiest)</li>
+                        <li data-i18n="totalLoods_hiphop">Hip Hop Flash Dances (by Studio YO!)</li>
+                        <li data-i18n="totalLoods_kids">Kids corner + obstakel luchtkussen</li>
+                        <li data-i18n="totalLoods_inschrijven">➡️ Inschrijven ter plaatse!</li>
+                      </ul>
+                      <p>🍕 <b data-i18n="totalLoods_food_pizza">FOOD: comfort pizza by COMPA</b> 🍕</p>
+                      <h3 data-i18n="totalLoods_silent_title">SILENT DISCO</h3>
+                      <p data-i18n="totalLoods_silent_date">📅 Zaterdag, 25 april 2026 van 21u tot 3u</p>
+                      <ul>
+                        <li data-i18n="totalLoods_silent_3bars">3 discobars</li>
+                        <li data-i18n="totalLoods_silent_line1">Les Craven – Kim Martini - Conform / Makadam</li>
+                        <li data-i18n="totalLoods_silent_line2">Brainfart Deluxe ft. WD-40 - Discobar De Max - Dafi</li>
+                        <li data-i18n="totalLoods_silent_line3">DJ 21 - Jack – Berre</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <script>
+                  function openTotaLoodsInfoPopup() {
+                    document.getElementById('totalLoodsInfoModal').style.display = 'flex';
+                  }
+                  function closeTotaLoodsInfoPopup() {
+                    document.getElementById('totalLoodsInfoModal').style.display = 'none';
+                  }
+                </script>
+            </div>
+          </div>
+
+                  <div class="event-item">
             <div class="event-info">
               <h1 data-i18n="event2Title">Summer Jam</h1>
               <h2 data-i18n="event2Date">augustus 2025</h2>
               <p data-i18n="event2Text">Terug in het Warandepark – de thuisbasis – brengt Summer Jam opnieuw een dag vol urban sports en muziek. Verwacht een skatecontest, graffiti-jam, 3on3 basketbal, hiphop-breakdance, freerunning en kinderanimatie. ’s Avonds sluiten we af met een spectaculaire feest in het park.</p>
               <p class="event2register3x3">🏀  
-                <a href="https://docs.google.com/forms/d/1O1DdXjgxXEg_grh-ob-nJxmgEQskq4gDfwxGEtAzj1U/viewform" target="_blank" rel="noopener" data-i18n="event2register3x3" title="3x3 Basketbal Inschrijven" data-i18n-title="basketballTooltip">Inschrijven 3x3</a>
+                <a href="https://destrooperij.be/#events" target="_blank" rel="noopener" data-i18n="event2register3x3" title="3x3 Basketbal Inschrijven" data-i18n-title="basketballTooltip">Inschrijven 3x3</a>
               </p>
             </div>
             <div class="event-img">
@@ -171,24 +268,6 @@
                 onclick="openInfoPopup('./img/WhatsApp Image 2025-08-27 at 07.56.30_f55dc03c.jpg')" 
                 title="Map" 
                 data-i18n-title="event_map_title" 
-              />
-            </div>
-          </div>
-           <div class="event-item">
-            <div class="event-info">
-              <h1 data-i18n="event1Title">Total Loods</h1>
-              <h2 data-i18n="event1Date">april 2025</h2>
-              <p data-i18n="event1Text">Op de site van de Citadel organiseert De STrooperij opnieuw Total Loods: een dag vol animaties en activiteiten, gevolgd door een avond met een silent disco (drie genres). Jonge DJ’s krijgen een kans op het podium. De toegang is gratis – enkel de hoofdtelefoon betaal je zelf.</p>
-            </div>
-            <div class="event-img">
-              <img src="./img/Event1.jpg" alt="img" />
-              <img 
-                class="video-icon" 
-                src="./img/movie-clip-click3.png" 
-                alt="vertical video" 
-                onclick="openVideoModal('./img/Video TL 1.mp4')" 
-                title="Play video" 
-                data-i18n-title="video_play_title" 
               />
             </div>
           </div>
@@ -286,7 +365,11 @@
             </a>
           </div>
         </div>
-        <p data-i18n="footerText">Gemaakt door Tom Lamers – 2025</p>
+        <p>
+          <span data-i18n="footerByPrefix">Gemaakt door</span>
+          <a class="footer-author" href="https://2toml.github.io/TL_Final/" target="_blank" rel="noopener noreferrer" title="Hier mijn werk" data-i18n-title="footerAuthorTooltip">Tom Lamers</a>
+          – 2025
+        </p>
       </div>
     </section>
     <!-- End Footer -->

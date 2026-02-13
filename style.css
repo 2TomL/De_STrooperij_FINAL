@@ -1,3 +1,141 @@
+@media (max-width: 700px) {
+  .all-events {
+    display: flex;
+    flex-direction: column;
+  }
+  .all-events .event-item {
+    order: 2;
+  }
+  .all-events .event-item:first-of-type {
+    order: 2;
+  }
+  .all-events .event-item:nth-of-type(2) {
+    order: 1;
+  }
+}
+#totalLoodsInfoModal .custom-modal-content::-webkit-scrollbar {
+  width: 7px;
+  background: rgba(0,0,0,0.08);
+  border-radius: 8px;
+}
+#totalLoodsInfoModal .custom-modal-content::-webkit-scrollbar-thumb {
+  background: #ff9900;
+  border-radius: 8px;
+}
+#totalLoodsInfoModal .custom-modal-content {
+  scrollbar-width: thin;
+  scrollbar-color: #ff9900 rgba(0,0,0,0.08);
+}
+/* --- Custom Modal for Total Loods Info --- */
+#totalLoodsInfoModal.custom-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+#totalLoodsInfoModal .custom-modal-content {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  padding: 0;
+  max-width: 95vw;
+  width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background-size: cover;
+  background-position: center;
+  border: 4px double #ff9900;
+  outline: 3px solid #00172e;
+  outline-offset: -8px;
+}
+
+/* Make all text white and blue more transparent */
+#totalLoodsInfoModal .custom-modal-inner {
+  background: rgba(0, 23, 46, 0.65);
+  color: #fff !important;
+  border-radius: 18px;
+  padding: 32px 24px 24px 24px;
+  font-size: 1.25rem;
+  font-family: inherit;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+#totalLoodsInfoModal .custom-modal-inner, #totalLoodsInfoModal .custom-modal-inner * {
+  color: #fff !important;
+}
+
+#totalLoodsInfoModal .custom-modal-inner h2, #totalLoodsInfoModal .custom-modal-inner h3 {
+  color: #ff9900;
+  margin-bottom: 8px;
+}
+
+#totalLoodsInfoModal .custom-modal-inner ul {
+  margin: 0 0 12px 18px;
+  padding: 0;
+}
+
+#totalLoodsInfoModal .custom-modal-inner li {
+  margin-bottom: 4px;
+}
+
+#totalLoodsInfoModal .custom-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.2s;
+}
+#totalLoodsInfoModal .custom-modal-close:hover {
+  background: #ff9900;
+  color: #00172e;
+}
+.event-info p[class="event1register"] {
+  display: flex;
+  background-color: #00172e;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-top: 25px;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  animation: pulseShadow 3.5s infinite ease-in-out;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-info p[class="event1register"] a {
+  color: white;
+  text-decoration: none;
+}
+
+.event-info p[class="event1register"]:hover {
+  background-color: #022e5a;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+/* Logo styling verwijderd */
+/*
 @media (max-width: 605px) {
   .spraycan-anim-group {
     top: 35px !important;
@@ -10,7 +148,9 @@
     left: 18px !important;
   }
 }
-/* --- Forceer logo positie op kleine schermen --- */
+*/
+/* Logo positie styling verwijderd */
+/*
 @media (max-width: 700px) {
   html, body {
     overflow-x: hidden !important;
@@ -35,6 +175,93 @@
     transform: translateX(-50%) scaleX(1.1) scaleY(1.1) rotate(-88deg) !important;
   }
 }
+*/
+
+/* --- Hexagon + Logo Animation --- */
+.hex-container {
+  position: relative;
+  width: 300px;
+  height: 330px;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hex-shape {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(0deg);
+}
+
+.hex-shape polygon {
+  animation: drawHex 2s ease-out forwards;
+}
+
+.hex-logo {
+  position: absolute;
+  width: 125%;
+  max-width: 410px;
+  height: auto;
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  object-fit: contain;
+  z-index: 2;
+  left: 51%;
+  transform: translateX(-50%);
+}
+
+/* --- Animatie van de zeshoek --- */
+@keyframes drawHex {
+  0% {
+    stroke-dashoffset: 700;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Responsive aanpassingen voor kleinere schermen */
+@media (max-width: 700px) {
+  .hex-container {
+    width: 300px; /* Vergroot de zeshoek */
+    height: 330px;
+    margin: 20px auto;
+  }
+  
+  .hex-logo {
+    width: 115%;
+    max-width: 290px;
+    /* Mobile: scale-in from 0.5 to 1 while fading in */
+    transform: translateX(-50%) scale(0.5);
+    transition: opacity 1s ease-out, transform 0.6s ease-out;
+  }
+  /* When logo becomes visible, scale to full size */
+  .hex-logo.visible { transform: translateX(-50%) scale(1); }
+
+  .hex-container {
+    order: -1; /* Plaats de hex-container boven de tekst */
+  }
+}
+
+@media (max-width: 450px) {
+  .hex-container {
+    width: 250px; /* Vergroot de zeshoek */
+    height: 280px;
+    margin: 15px auto;
+  }
+  
+  .hex-logo {
+    width: 110%;
+    max-width: 230px;
+    /* Maintain the mobile scale-in behavior on very small screens */
+    transform: translateX(-50%) scale(0.5);
+    transition: opacity 1s ease-out, transform 0.6s ease-out;
+  }
+  .hex-logo.visible { transform: translateX(-50%) scale(1); }
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
 * {
 	padding: 0;
@@ -45,14 +272,20 @@ html {
   font-size: 10px;
   font-family: "Rethink Sans", sans-serif;
   font-style: normal;
-/* Optioneel: class voor Rethink Sans */
+  scroll-behavior: smooth;
+}
 .rethink-sans {
   font-family: "Rethink Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
-scroll-behavior: smooth;
+
+/* Voorkom horizontale scrollbars door overflow en vw-breedtes */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 a {
 	text-decoration: none;
@@ -67,7 +300,7 @@ a {
 img {
 	height: 100%;
 	width: 100%;
-	object-fit: cover;
+  object-fit: cover;
 }
 p {
 	color: black;
@@ -139,7 +372,7 @@ li.lang-switch .lang-btn {
 	z-index: 1000;
 	left: 0;
 	top: 0;
-	width: 100vw;
+  width: 100%;
 	height: auto;
 }
 #header .header {
@@ -160,7 +393,7 @@ li.lang-switch .lang-btn {
 	list-style: none;
 	position: absolute;
 	background-color: rgb(31, 30, 30);
-	width: 100vw;
+  width: 100%;
 	height: 100vh;
 	left: 100%;
 	top: 0;
@@ -341,6 +574,15 @@ li.lang-switch .lang-btn {
 /* End home Section */
 
 /* missions Section */
+#footer .footer a.footer-author {
+  color: #FFD700;
+  font-weight: 600;
+  text-decoration: none;
+}
+#footer .footer a.footer-author:hover,
+#footer .footer a.footer-author:focus {
+  text-decoration: underline;
+}
 #missions .missions {
 	flex-direction: column;
 	text-align: center;
@@ -1363,10 +1605,10 @@ filter: drop-shadow(0 0 32px #fff) drop-shadow(0 0 48px #25305f);
     bottom: 10px;
   }
   .info-icon-top {
-    width: 56px;
-    height: 56px;
-    top: 10px;
-    left: 10px;
+  width: 56px;
+  height: 56px;
+  top: 10px;
+  left: 10px;
   }
 }
 
@@ -1470,6 +1712,8 @@ filter: drop-shadow(0 0 32px #fff) drop-shadow(0 0 48px #25305f);
     transform: translateY(-50%) scale(0.7) rotate(20deg);
   }
 }
+/* .spraycan-logo styling verwijderd */
+/*
 .spraycan-logo {
   position: fixed;
   right: calc(8cm + 120px);
@@ -1482,6 +1726,7 @@ filter: drop-shadow(0 0 32px #fff) drop-shadow(0 0 48px #25305f);
   animation: spraylogoIn 1.2s cubic-bezier(.68,-0.55,.27,1.55) 2.5s forwards;
   pointer-events: none;
 }
+*/
 @keyframes spraylogoIn {
   0% {
     opacity: 0;
@@ -1598,6 +1843,15 @@ filter: drop-shadow(0 0 32px #fff) drop-shadow(0 0 48px #25305f);
 .home-titles {
   flex: 1 1 auto;
 }
+/* Plaats op desktop de tekst links en de hex + logo rechts */
+.home-content .home-titles { order: 1; }
+.home-content .hex-container { order: 2; }
+
+/* Op mobiel stapelen en zet hex boven de tekst */
+@media (max-width: 700px) {
+  .home-content { flex-direction: column; align-items: center; }
+  .home-content .hex-container { order: -1; }
+}
 .spraycan-logo {
   position: fixed;
   right: calc(8cm + 120px);
@@ -1698,6 +1952,8 @@ section:not(#home) .home-only {
   30% { opacity: 1; transform: scale(1.1); }
   100% { opacity: 0.7; transform: scale(1); }
 }
+/* .spray-drip styling verwijderd */
+/*
 .spray-drip {
   position: fixed;
   right: calc(2cm + 160px);
@@ -1709,6 +1965,7 @@ section:not(#home) .home-only {
   pointer-events: none;
   animation: dripDown 2.5s linear 2.7s forwards;
 }
+*/
 @keyframes dripDown {
   0% {
     opacity: 0;
