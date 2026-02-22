@@ -47,7 +47,17 @@ function setLanguage(lang) {
   elements.forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (translations[lang][key]) {
-      el.textContent = translations[lang][key];
+      // Render event1Text as HTML so the yellow info link appears
+      if (key === 'event1Text') {
+        el.innerHTML = translations[lang][key];
+        // Add event listener to prevent default for INFO link
+        const infoLinks = el.querySelectorAll('a[onclick*="openTotaLoodsInfoPopup"]');
+        infoLinks.forEach(link => {
+          link.addEventListener('click', function(e) { e.preventDefault(); openTotaLoodsInfoPopup(); });
+        });
+      } else {
+        el.textContent = translations[lang][key];
+      }
     }
   });
   // Vertaal tooltips (title)
@@ -84,7 +94,7 @@ const translations = {
         eventsTitle: "EVENTS",
         event1Title: "Total Loods",
         event1Date: "april 2026",
-        event1Text: "Op de site van de Citadel organiseert De STrooperij opnieuw Total Loods: een dag vol animaties en activiteiten, gevolgd door een avond met een silent disco. Jonge DJ’s krijgen een kans op het podium. De toegang is gratis – enkel de hoofdtelefoon betaal je zelf.",
+        event1Text: "In de loods op de Citadel organiseert De Strooperij een laatste editie van Total Loods: een graffitifestival met games, sport en een silent disco. Alle info vind je hier >>> <a href=\"#\" onclick=\"openTotaLoodsInfoPopup()\" style=\"color:#ff9900;font-weight:700;text-decoration:underline;\">INFO</a>",
         event1register: "Inschrijven Silent Disco",
         silentdiscoTooltip: "Silent Disco Inschrijven",
         event2Title: "Summer Jam",
@@ -180,7 +190,7 @@ const translations = {
         eventsTitle: "EVENTS",
         event1Title: "Total Loods",
         event1Date: "April 2026",
-        event1Text: "At the Citadel site, De STrooperij presents another edition of Total Loods: a day full of animations and activities, followed by an evening Silent Disco. Young DJs get their time in the spotlight. Entry is free – you only pay for the headphones.",
+        event1Text: "In the warehouse at the Citadel, De Strooperij organizes a final edition of Total Loods: a graffiti festival with games, sports, and a silent disco. Find all info here >>> <a href=\"#\" onclick=\"openTotaLoodsInfoPopup()\" style=\"color:#ff9900;font-weight:700;text-decoration:underline;\">INFO</a>!",
         event1register: "Register Silent Disco",
         silentdiscoTooltip: "Register for Silent Disco",
         event2Title: "Summer Jam",
@@ -278,7 +288,7 @@ const translations = {
         eventsTitle: "ÉVÉNEMENTS",
         event1Title: "Total Loods",
         event1Date: "avril 2026",
-        event1Text: "Sur le site de la Citadelle, De STrooperij organise une nouvelle édition de Total Loods : une journée pleine d'animations et d'activités, suivie d'une soirée Silent Disco. De jeunes DJ auront l'occasion de se produire. L'entrée est gratuite – seul le casque est à votre charge.",
+        event1Text: "Dans l'entrepôt de la Citadelle, De Strooperij organise une dernière édition de Total Loods : un festival graffiti avec jeux, sport et une silent disco. Toutes les infos ici >>> <a href=\"#\" onclick=\"openTotaLoodsInfoPopup()\" style=\"color:#ff9900;font-weight:700;text-decoration:underline;\">INFO</a> !",
         event1register: "Inscription Silent Disco",
         silentdiscoTooltip: "Inscription Silent Disco",
         event2Title: "Summer Jam",
