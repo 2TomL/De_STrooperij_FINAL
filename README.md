@@ -18,9 +18,8 @@ Welcome to the De STrooperij website! This project is a comprehensive web applic
   - `SJ-2025/`: Subdirectory for images related to the SJ-2025 event.
   - `list.json`: JSON file containing metadata for the images.
 
-## License
-This website and its content are licensed under the ownership of **Tom Lamers**. Unauthorized use, reproduction, or distribution is prohibited.
+## Authorship and Rights
+This website and its content were created and coded by **Tom Lamers**. All rights reserved. Unauthorized use, reproduction, or distribution is prohibited.
 
----
 
 Thank you for visiting the De STrooperij website. Enjoy exploring the features and content!
