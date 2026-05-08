@@ -575,3 +575,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }, 2200);
 });
+
+// Total Loods Info Popup functions
+function openTotaLoodsInfoPopup() {
+  document.getElementById('totalLoodsInfoModal').style.display = 'flex';
+}
+function closeTotaLoodsInfoPopup() {
+  document.getElementById('totalLoodsInfoModal').style.display = 'none';
+}
