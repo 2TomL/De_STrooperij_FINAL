@@ -42,21 +42,25 @@ langButtons.forEach(btn => {
 });
 
 function setLanguage(lang) {
+  const selectedTranslations = translations[lang] || translations.nl;
+  const fallbackTranslations = translations.nl;
+
   // Vertaal tekstinhoud
   const elements = document.querySelectorAll('[data-i18n]');
   elements.forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (translations[lang][key]) {
+    const translatedValue = selectedTranslations[key] ?? fallbackTranslations[key];
+    if (translatedValue !== undefined) {
       // Render event1Text as HTML so the yellow info link appears
       if (key === 'event1Text') {
-        el.innerHTML = translations[lang][key];
+        el.innerHTML = translatedValue;
         // Add event listener to prevent default for INFO link
         const infoLinks = el.querySelectorAll('a[onclick*="openTotaLoodsInfoPopup"]');
         infoLinks.forEach(link => {
           link.addEventListener('click', function(e) { e.preventDefault(); openTotaLoodsInfoPopup(); });
         });
       } else {
-        el.textContent = translations[lang][key];
+        el.textContent = translatedValue;
       }
     }
   });
@@ -64,8 +68,9 @@ function setLanguage(lang) {
   const tooltipElements = document.querySelectorAll('[data-i18n-title]');
   tooltipElements.forEach(el => {
     const key = el.getAttribute('data-i18n-title');
-    if (translations[lang][key]) {
-      el.title = translations[lang][key];
+    const translatedTitle = selectedTranslations[key] ?? fallbackTranslations[key];
+    if (translatedTitle !== undefined) {
+      el.title = translatedTitle;
     }
   });
 }
@@ -82,7 +87,7 @@ const translations = {
         contact: "Contact",
         
         missionTitle: "Missie",
-        event2register3x3:"Inschrijven 3x3 (Uitverkocht)",
+        event2register3x3:"Inschrijven bball 3X3",
         missionIntro: "De STrooperij is een vriendengroep met elk hun eigen talenten. We organiseren unieke evenementen in onze geboortestad DieST, met als missie: mensen samenbrengen rond urban sports en cultuur. Sinds de eerste edities van Summer Jam (2002-2007) in het Warandepark, is de passie voor street culture altijd blijven leven. In 2018 bliezen we het concept nieuw leven in, en met groot succes, want in 2023 kregen we de Publieksprijs van de Cultuurraad van DieST. Het draait om creativiteit, sport, muziek, en verbinding – voor jong en oud.",
         sportTitle: "Sport",
         sportText: "Van skatecontest en 3x3 basketbal tot freerunning – sport is een vaste waarde bij elk event van De STrooperij. Lokale verenigingen zoals de Diestse Sharks en skaters nemen het voortouw in de organisatie. Bewegen, samenwerken en samen genieten.",
@@ -102,8 +107,29 @@ const translations = {
         event1register: "Inschrijven Silent Disco (Uitverkocht)",
         silentdiscoTooltip: "Silent Disco Inschrijven",
         event2Title: "Summer Jam",
-        event2Date: "augustus 2025",
+        event2Date: "augustus 2026",
         event2Text: "Terug in het Warandepark – de thuisbasis – brengt Summer Jam opnieuw een dag vol urban sports en muziek. Verwacht een skatecontest, graffiti-jam, 3on3 basketbal, hiphop-breakdance, freerunning en kinderanimatie. ’s Avonds sluiten we af met een spectaculaire feest in het park.",
+        summerJamInfoTitle: "SUMMER JAM 2026",
+        summerJamInfoIntro: "Summer Jam keert terug naar het Warandepark!",
+        summerJamInfoTagline: "Open air party - graffitijam - 3x3 - skate & inline skate - hip hop & breakdance",
+        summerJamInfoTimeLabel: "13u:",
+        summerJamInfoBullet1: "Graffitijam met 20 artiesten die het ganse stadion in de verf zetten",
+        summerJamInfoBullet2: "Skate & inline skate contest: ter plaatse inschrijven - prijzen van VANS",
+        summerJamInfoBullet3: "3x3 tornooi",
+        summerJamInfoBullet4: "Breakdance by u2style in het prachtige amfitheater",
+        summerJamInfoBullet5: "Hip hop dance by studio Yo!",
+        summerJamInfoEvening: "'s avonds: open air party",
+        summerJamInfoLineupTitle: "Line up:",
+        summerJamInfoLineup1: "MX Veader",
+        summerJamInfoLineup2: "Drone",
+        summerJamInfoLineup3: "DJ 21",
+        summerJamInfoLineup4: "Grazzhoppa",
+        summerJamInfoLineup5: "Les Craven & Kim Martini Back 2 Back",
+        summerJamInfoLineup6: "Victor Cacciato",
+        summerJamInfoLineup7: "Jack",
+        summerJamInfoLineup8: "DJ Vega (Stikstof / frontal)",
+        summerJamInfoLineup9: "Berre",
+        summerJamInfoRegister: "Inschrijven 3X3",
         event3Title: "Sponsors",
         event3Date: "Welgemeende dikke merci",
         event3Text: "Een oprechte dankjewel aan al onze sponsors en vrijwilligers. Dankzij jullie steun, vertrouwen en inzet kan De STrooperij blijven groeien en mensen samenbrengen.",
@@ -135,7 +161,7 @@ const translations = {
         emailTitle: "Email",
         emailText: "summerjam2.0@hotmail.com",
         volunteerTitle: "Vrijwilligers",
-        volunteerText: "Meehelpen op ons volgende event?",
+        volunteerText: "Wil je meehelpen op ons volgende event?",
         footerByPrefix: "Gemaakt door",
         footerFacebookTooltip: "Volg ons op Facebook",
         footerInstagramTooltip: "Volg ons op Instagram",
@@ -184,7 +210,7 @@ const translations = {
         contact: "Contact",
         
         missionTitle: "Mission",
-        event2register3x3: "Register 3x3 (Sold Out)",
+        event2register3x3: "Register bball 3X3",
         missionIntro: "De STrooperij is a group of friends, each with their own talents. We organize unique events in our hometown DieST with one mission: bringing people together through urban sports and culture. Since the early editions of Summer Jam (2002–2007) in Warande Park, our passion for street culture has never faded. In 2018, we revived the concept with great success – in 2023 we won the Audience Award from DieST’s Culture Council. It's all about creativity, sports, music, and connection – for young and old.",
         sportTitle: "Sports",
         sportText: "From skate contests and 3x3 basketball to freerunning – sports are a staple at every De STrooperij event. Local organizations like the Diest Sharks and skaters take the lead in planning. Movement, collaboration, and shared fun.",
@@ -204,7 +230,7 @@ const translations = {
         event1register: "Register Silent Disco (Sold Out)",
         silentdiscoTooltip: "Register for Silent Disco",
         event2Title: "Summer Jam",
-        event2Date: "August 2025",
+        event2Date: "August 2026",
         event2Text: "Back in Warande Park – our home base – Summer Jam brings another day of urban sports and music. Expect a skate contest, graffiti jam, 3-on-3 basketball, hiphop-breakdance, freerunning, and kids entertainment. In the evening, we wrap up with a spectacular party in the park.",
         event3Title: "Sponsors",
         event3Date: "A heartfelt thank you",
@@ -291,7 +317,7 @@ const translations = {
         home_dst: "De STrooperij",
         
         missionTitle: "Mission",
-        event2register3x3: "Inscription 3x3 (Complet)",
+        event2register3x3: "Inscription bball 3X3",
         missionIntro: "De STrooperij est un groupe d’amis, chacun avec ses propres talents. Nous organisons des événements uniques dans notre ville natale de DieST avec une mission : rassembler les gens autour des sports urbains et de la culture. Depuis les premières éditions de Summer Jam (2002–2007) au parc Warande, notre passion pour la culture urbaine n’a jamais cessé. En 2018, nous avons relancé le concept avec grand succès – en 2023, nous avons reçu le Prix du Public du Conseil de la Culture de DieST. Il s'agit de créativité, de sport, de musique et de connexion – pour les jeunes et les moins jeunes.",
         sportTitle: "Sport",
         sportText: "Des concours de skate et du basket 3x3 au freerun – le sport est une valeur sûre lors de chaque événement de De STrooperij. Des associations locales comme les Diest Sharks et des skateurs prennent les devants dans l’organisation. Bouger, collaborer et profiter ensemble.",
@@ -311,7 +337,7 @@ const translations = {
         event1register: "Inscription Silent Disco (Complet)",
         silentdiscoTooltip: "Inscription Silent Disco",
         event2Title: "Summer Jam",
-        event2Date: "août 2025",
+        event2Date: "août 2026",
         event2Text: "De retour au parc Warande – notre base – le Summer Jam propose à nouveau une journée de sports urbains et de musique. Attendez-vous à un concours de skate, un graffiti jam, du basket 3 contre 3, du hiphop et breakdance, du freerun et des animations pour enfants. La soirée se termine par un fête spectaculaire dans le parc.",
         event3Title: "Sponsors",
         event3Date: "Un grand merci",
@@ -376,6 +402,59 @@ const translations = {
     }
 };
 
+  Object.assign(translations.en, {
+    event2register3x3: "Register bball 3X3",
+    summerJamInfoTitle: "SUMMER JAM 2026",
+    summerJamInfoIntro: "Summer Jam returns to Warande Park!",
+    summerJamInfoTagline: "Open air party - graffiti jam - 3x3 - skate & inline skate - hip hop & breakdance",
+    summerJamInfoTimeLabel: "1pm:",
+    summerJamInfoBullet1: "Graffiti jam with 20 artists painting the whole stadium",
+    summerJamInfoBullet2: "Skate & inline skate contest: register on site - prizes by VANS",
+    summerJamInfoBullet3: "3x3 tournament",
+    summerJamInfoBullet4: "Breakdance by u2style in the beautiful amphitheatre",
+    summerJamInfoBullet5: "Hip hop dance by Studio Yo!",
+    summerJamInfoEvening: "In the evening: open air party",
+    summerJamInfoLineupTitle: "Line up:",
+    summerJamInfoLineup1: "MX Veader",
+    summerJamInfoLineup2: "Drone",
+    summerJamInfoLineup3: "DJ 21",
+    summerJamInfoLineup4: "Grazzhoppa",
+    summerJamInfoLineup5: "Les Craven & Kim Martini Back 2 Back",
+    summerJamInfoLineup6: "Victor Cacciato",
+    summerJamInfoLineup7: "Jack",
+    summerJamInfoLineup8: "DJ Vega (Stikstof / frontal)",
+    summerJamInfoLineup9: "Berre",
+    summerJamInfoRegister: "Register 3X3"
+  });
+
+  Object.assign(translations.fr, {
+    event2register3x3: "Inscription bball 3X3",
+    summerJamInfoTitle: "SUMMER JAM 2026",
+    summerJamInfoIntro: "Summer Jam revient au parc Warande !",
+    summerJamInfoTagline: "Open air party - graffiti jam - 3x3 - skate & inline skate - hip hop & breakdance",
+    summerJamInfoTimeLabel: "13h :",
+    summerJamInfoBullet1: "Jam graffiti avec 20 artistes qui peignent tout le stade",
+    summerJamInfoBullet2: "Concours skate & inline skate : inscription sur place - prix VANS",
+    summerJamInfoBullet3: "Tournoi 3x3",
+    summerJamInfoBullet4: "Breakdance by u2style dans le magnifique amphithéâtre",
+    summerJamInfoBullet5: "Hip hop dance by Studio Yo!",
+    summerJamInfoEvening: "Le soir : open air party",
+    summerJamInfoLineupTitle: "Line up :",
+    summerJamInfoLineup1: "MX Veader",
+    summerJamInfoLineup2: "Drone",
+    summerJamInfoLineup3: "DJ 21",
+    summerJamInfoLineup4: "Grazzhoppa",
+    summerJamInfoLineup5: "Les Craven & Kim Martini Back 2 Back",
+    summerJamInfoLineup6: "Victor Cacciato",
+    summerJamInfoLineup7: "Jack",
+    summerJamInfoLineup8: "DJ Vega (Stikstof / frontal)",
+    summerJamInfoLineup9: "Berre",
+    summerJamInfoRegister: "Inscription 3X3"
+  });
+
+  document.documentElement.lang = 'nl';
+  setLanguage('nl');
+
 // Functie om de video-popup te openen met de juiste video
 function openVideoModal(videoPath) {
     const modal = document.getElementById("videoModal");
@@ -430,29 +509,95 @@ let grafTImages = [
   'img/SJ-2025/IMG-20250827-WA0003.jpg',
   'img/SJ-2025/IMG-20250827-WA0005.jpg'
 ];
+
+let tLoodsImages = [
+  'img/TLoods_2026/645804575_1420905153162145_7244970095252763401_n.jpg',
+  'img/TLoods_2026/657206533_1439485374637456_5748628233573676717_n.jpg',
+  'img/TLoods_2026/657418168_1439485527970774_6935635141032647674_n.jpg',
+  'img/TLoods_2026/657516618_1439485421304118_5895610368449440443_n.jpg',
+  'img/TLoods_2026/658133371_1439485334637460_4566339895416524886_n.jpg',
+  'img/TLoods_2026/681274209_1466678715251455_8892182931781564646_n.jpg',
+  'img/TLoods_2026/681882925_1466678868584773_8432391604521515327_n.jpg',
+  'img/TLoods_2026/681883534_1466679068584753_5633065168713635748_n.jpg',
+  'img/TLoods_2026/682652364_1466679185251408_2912864858730701980_n.jpg',
+  'img/TLoods_2026/682713459_1466679035251423_8060993586093737964_n.jpg',
+  'img/TLoods_2026/682964890_1466678928584767_2633150329182530748_n.jpg',
+  'img/TLoods_2026/683368945_1466679101918083_5090348149983766920_n.jpg',
+  'img/TLoods_2026/695822763_1478601810725812_6767877232313281451_n.jpg',
+  'img/TLoods_2026/696085667_1478602277392432_4670531966593829894_n.jpg',
+  'img/TLoods_2026/696089380_1478601504059176_2869855125637783790_n.jpg',
+  'img/TLoods_2026/696136597_1478602100725783_2498626546505614322_n.jpg',
+  'img/TLoods_2026/696157990_1478602227392437_4076122973109586969_n.jpg',
+  'img/TLoods_2026/696165313_1478601710725822_3549515146318147166_n.jpg',
+  'img/TLoods_2026/696222164_1478602020725791_5264603213625520437_n.jpg',
+  'img/TLoods_2026/696240165_1478601970725796_5498267398024120868_n.jpg',
+  'img/TLoods_2026/696269880_1478601577392502_2447749742565909835_n.jpg',
+  'img/TLoods_2026/696485421_1478601764059150_8762368052821047608_n.jpg',
+  'img/TLoods_2026/696920976_1478601860725807_1563475090847926121_n.jpg',
+  'img/TLoods_2026/697077976_1478602060725787_4690216208307437998_n.jpg',
+  'img/TLoods_2026/697301313_1478601657392494_3531572273678414577_n.jpg',
+  'img/TLoods_2026/698583699_1478602144059112_719114610310038277_n.jpg',
+  'img/TLoods_2026/699158522_1478601920725801_1134918368154622457_n.jpg',
+  'img/TLoods_2026/699171587_1478601620725831_8658359483819748229_n.jpg',
+  'img/TLoods_2026/699597450_1478602177392442_6936307838782292572_n.jpg'
+];
+
+let mastaAceImages = [
+  'img/Masta_Ace/pics/WhatsApp Image 2026-05-08 at 16.07.48.jpeg'
+];
+
+// Keep this array ready: add video paths here once files are available in img/Masta_Ace/video
+let mastaAceVideos = [];
+
 let grafTIndex = 0;
-window.openGrafTSlideshow = function() {
-  if (grafTImages.length === 0) {
+let activeSlideshowImages = grafTImages;
+
+function openSlideshow(images) {
+  activeSlideshowImages = images;
+  if (!activeSlideshowImages || activeSlideshowImages.length === 0) {
     document.getElementById('grafTImage').src = '';
   } else {
     grafTIndex = 0;
-    document.getElementById('grafTImage').src = grafTImages[grafTIndex];
+    document.getElementById('grafTImage').src = activeSlideshowImages[grafTIndex];
   }
+  var navBtns = document.querySelector('.grafT-nav-btns');
+  if (navBtns) navBtns.style.display = '';
   document.getElementById('grafTModal').style.display = 'flex';
 }
+
+window.openGrafTSlideshow = function() {
+  openSlideshow(grafTImages);
+}
+
+window.openTLoodsSlideshow = function() {
+  openSlideshow(tLoodsImages);
+}
+
+window.openMastaAceSlideshow = function() {
+  openSlideshow(mastaAceImages);
+}
+
+window.openMastaAceVideo = function() {
+  if (!mastaAceVideos || mastaAceVideos.length === 0) {
+    alert('Masta Ace videos volgen binnenkort.');
+    return;
+  }
+  openVideoModal(mastaAceVideos[0]);
+}
+
 window.closeGrafTSlideshow = function() {
   document.getElementById('grafTModal').style.display = 'none';
 }
 window.nextGrafTImage = function() {
-  if (grafTImages.length > 0) {
-    grafTIndex = (grafTIndex + 1) % grafTImages.length;
-    document.getElementById('grafTImage').src = grafTImages[grafTIndex];
+  if (activeSlideshowImages && activeSlideshowImages.length > 0) {
+    grafTIndex = (grafTIndex + 1) % activeSlideshowImages.length;
+    document.getElementById('grafTImage').src = activeSlideshowImages[grafTIndex];
   }
 }
 window.prevGrafTImage = function() {
-  if (grafTImages.length > 0) {
-    grafTIndex = (grafTIndex - 1 + grafTImages.length) % grafTImages.length;
-    document.getElementById('grafTImage').src = grafTImages[grafTIndex];
+  if (activeSlideshowImages && activeSlideshowImages.length > 0) {
+    grafTIndex = (grafTIndex - 1 + activeSlideshowImages.length) % activeSlideshowImages.length;
+    document.getElementById('grafTImage').src = activeSlideshowImages[grafTIndex];
   }
 }
 // --- einde slideshow ---
@@ -599,3 +744,45 @@ function openTotaLoodsInfoPopup() {
 function closeTotaLoodsInfoPopup() {
   document.getElementById('totalLoodsInfoModal').style.display = 'none';
 }
+
+// Summer Jam Info Popup functions
+function openSummerJamInfoPopup() {
+  var modal = document.getElementById('summerJamInfoModal');
+  if (modal) {
+    modal.style.display = 'flex';
+    modal.setAttribute('aria-hidden', 'false');
+  }
+}
+
+function closeSummerJamInfoPopup() {
+  var modal = document.getElementById('summerJamInfoModal');
+  if (modal) {
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+  }
+}
+
+document.addEventListener('click', function (event) {
+  var modal = document.getElementById('summerJamInfoModal');
+  if (modal && event.target === modal) {
+    closeSummerJamInfoPopup();
+  }
+});
+
+// Prevent event image hover zoom when user hovers side action buttons
+document.addEventListener('DOMContentLoaded', function () {
+  var sideLabels = document.querySelectorAll('#events .event-side-labels');
+
+  sideLabels.forEach(function (labels) {
+    var eventItem = labels.closest('.event-item');
+    if (!eventItem) return;
+
+    labels.addEventListener('mouseenter', function () {
+      eventItem.classList.add('no-image-hover');
+    });
+
+    labels.addEventListener('mouseleave', function () {
+      eventItem.classList.remove('no-image-hover');
+    });
+  });
+});
