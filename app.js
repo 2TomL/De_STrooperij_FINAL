@@ -563,19 +563,52 @@ let mastaAceImages = [
   'img/Masta_Ace/pics/Screenshot_29-7-2026_16396.jpeg'
 ];
 
+const mastaAceImageAliases = {
+  'img/Masta_Ace/pics/Screenshot_29-7-2026_163731_www.instagram.com.jpeg': 'img/Masta_Ace/pics/Screenshot_29-7-2026_163731.jpeg',
+  'img/Masta_Ace/pics/Screenshot_29-7-2026_163748_www.instagram.com.jpeg': 'img/Masta_Ace/pics/Screenshot_29-7-2026_163748.jpeg',
+  'img/Masta_Ace/pics/Screenshot_29-7-2026_163815_www.instagram.com.jpeg': 'img/Masta_Ace/pics/Screenshot_29-7-2026_163815.jpeg',
+  'img/Masta_Ace/pics/Screenshot_29-7-2026_163827_www.instagram.com.jpeg': 'img/Masta_Ace/pics/Screenshot_29-7-2026_163827.jpeg',
+  'img/Masta_Ace/pics/Screenshot_29-7-2026_163842_www.instagram.com.jpeg': 'img/Masta_Ace/pics/Screenshot_29-7-2026_163842.jpeg',
+  'img/Masta_Ace/pics/Screenshot_29-7-2026_163920_www.instagram.com.jpeg': 'img/Masta_Ace/pics/Screenshot_29-7-2026_163920.jpeg',
+  'img/Masta_Ace/pics/Screenshot_29-7-2026_163934_www.instagram.com.jpeg': 'img/Masta_Ace/pics/Screenshot_29-7-2026_163934.jpeg',
+  'img/Masta_Ace/pics/Screenshot_29-7-2026_16396_www.instagram.com.jpeg': 'img/Masta_Ace/pics/Screenshot_29-7-2026_16396.jpeg'
+};
+
 // Keep this array ready: add video paths here once files are available in img/Masta_Ace/video
 let mastaAceVideos = [];
 
 let grafTIndex = 0;
 let activeSlideshowImages = grafTImages;
 
+function buildImageUrl(imagePath) {
+  const resolvedPath = mastaAceImageAliases[imagePath] || imagePath;
+  return resolvedPath ? encodeURI(resolvedPath) : '';
+}
+
+function setSlideshowImage(imagePath) {
+  const img = document.getElementById('grafTImage');
+  if (!img) return;
+
+  img.onerror = function() {
+    if (activeSlideshowImages && activeSlideshowImages.length > 1) {
+      nextGrafTImage();
+    } else {
+      img.alt = 'Afbeelding kon niet worden geladen';
+      img.src = '';
+    }
+  };
+
+  img.alt = 'Slideshow afbeelding';
+  img.src = buildImageUrl(imagePath);
+}
+
 function openSlideshow(images) {
   activeSlideshowImages = images;
   if (!activeSlideshowImages || activeSlideshowImages.length === 0) {
-    document.getElementById('grafTImage').src = '';
+    setSlideshowImage('');
   } else {
     grafTIndex = 0;
-    document.getElementById('grafTImage').src = activeSlideshowImages[grafTIndex];
+    setSlideshowImage(activeSlideshowImages[grafTIndex]);
   }
   var navBtns = document.querySelector('.grafT-nav-btns');
   if (navBtns) navBtns.style.display = '';
@@ -608,13 +641,13 @@ window.closeGrafTSlideshow = function() {
 window.nextGrafTImage = function() {
   if (activeSlideshowImages && activeSlideshowImages.length > 0) {
     grafTIndex = (grafTIndex + 1) % activeSlideshowImages.length;
-    document.getElementById('grafTImage').src = activeSlideshowImages[grafTIndex];
+    setSlideshowImage(activeSlideshowImages[grafTIndex]);
   }
 }
 window.prevGrafTImage = function() {
   if (activeSlideshowImages && activeSlideshowImages.length > 0) {
     grafTIndex = (grafTIndex - 1 + activeSlideshowImages.length) % activeSlideshowImages.length;
-    document.getElementById('grafTImage').src = activeSlideshowImages[grafTIndex];
+    setSlideshowImage(activeSlideshowImages[grafTIndex]);
   }
 }
 // --- einde slideshow ---
@@ -665,8 +698,7 @@ document.addEventListener('DOMContentLoaded', function() {
 window.openInfoPopup = function(imgPath) {
   // Hergebruik de grafTModal, maar toon alleen de gewenste foto
   var modal = document.getElementById('grafTModal');
-  var img = document.getElementById('grafTImage');
-  img.src = imgPath;
+  setSlideshowImage(imgPath);
   // Verberg navigatieknoppen
   var navBtns = document.querySelector('.grafT-nav-btns');
   if (navBtns) navBtns.style.display = 'none';
