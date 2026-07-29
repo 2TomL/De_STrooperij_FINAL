@@ -551,7 +551,16 @@ let tLoodsImages = [
 ];
 
 let mastaAceImages = [
-  'img/Masta_Ace/pics/WhatsApp Image 2026-05-08 at 16.07.48.jpeg'
+  'img/Masta_Ace/pics/WhatsApp Image 2026-05-08 at 16.07.48.jpeg',
+  'img/Masta_Ace/pics/Screenshot_29-7-2026_16372_www.instagram.com.jpeg',
+  'img/Masta_Ace/pics/Screenshot_29-7-2026_163731_www.instagram.com.jpeg',
+  'img/Masta_Ace/pics/Screenshot_29-7-2026_163748_www.instagram.com.jpeg',
+  'img/Masta_Ace/pics/Screenshot_29-7-2026_163815_www.instagram.com.jpeg',
+  'img/Masta_Ace/pics/Screenshot_29-7-2026_163827_www.instagram.com.jpeg',
+  'img/Masta_Ace/pics/Screenshot_29-7-2026_163842_www.instagram.com.jpeg',
+  'img/Masta_Ace/pics/Screenshot_29-7-2026_163920_www.instagram.com.jpeg',
+  'img/Masta_Ace/pics/Screenshot_29-7-2026_163934_www.instagram.com.jpeg',
+  'img/Masta_Ace/pics/Screenshot_29-7-2026_16396_www.instagram.com.jpeg'
 ];
 
 // Keep this array ready: add video paths here once files are available in img/Masta_Ace/video
