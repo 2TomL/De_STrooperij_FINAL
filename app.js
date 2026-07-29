@@ -551,16 +551,16 @@ let tLoodsImages = [
 ];
 
 let mastaAceImages = [
-  'img/Masta_Ace/pics/WhatsApp Image 2026-05-08 at 16.07.48.jpeg',
-  'img/Masta_Ace/pics/Screenshot_29-7-2026_16372_www.instagram.com.jpeg',
-  'img/Masta_Ace/pics/Screenshot_29-7-2026_163731_www.instagram.com.jpeg',
-  'img/Masta_Ace/pics/Screenshot_29-7-2026_163748_www.instagram.com.jpeg',
-  'img/Masta_Ace/pics/Screenshot_29-7-2026_163815_www.instagram.com.jpeg',
-  'img/Masta_Ace/pics/Screenshot_29-7-2026_163827_www.instagram.com.jpeg',
-  'img/Masta_Ace/pics/Screenshot_29-7-2026_163842_www.instagram.com.jpeg',
-  'img/Masta_Ace/pics/Screenshot_29-7-2026_163920_www.instagram.com.jpeg',
-  'img/Masta_Ace/pics/Screenshot_29-7-2026_163934_www.instagram.com.jpeg',
-  'img/Masta_Ace/pics/Screenshot_29-7-2026_16396_www.instagram.com.jpeg'
+  'img/Masta_Ace/pics/Image 2026-05-08 at 16.07.48.jpeg',
+  'img/Masta_Ace/pics/Screenshot_29-7-2026_16372.jpeg',
+  'img/Masta_Ace/pics/Screenshot_29-7-2026_163731.jpeg',
+  'img/Masta_Ace/pics/Screenshot_29-7-2026_163748.jpeg',
+  'img/Masta_Ace/pics/Screenshot_29-7-2026_163815.jpeg',
+  'img/Masta_Ace/pics/Screenshot_29-7-2026_163827.jpeg',
+  'img/Masta_Ace/pics/Screenshot_29-7-2026_163842.jpeg',
+  'img/Masta_Ace/pics/Screenshot_29-7-2026_163920.jpeg',
+  'img/Masta_Ace/pics/Screenshot_29-7-2026_163934.jpeg',
+  'img/Masta_Ace/pics/Screenshot_29-7-2026_16396.jpeg'
 ];
 
 // Keep this array ready: add video paths here once files are available in img/Masta_Ace/video
@@ -569,38 +569,14 @@ let mastaAceVideos = [];
 let grafTIndex = 0;
 let activeSlideshowImages = grafTImages;
 
-function loadSlideshowImage(index) {
-  const img = document.getElementById('grafTImage');
-  const images = activeSlideshowImages || [];
-
-  if (!images.length) {
-    img.src = '';
-    return;
-  }
-
-  const safeIndex = (index + images.length) % images.length;
-  const src = images[safeIndex];
-
-  img.onerror = function() {
-    img.onerror = null;
-    if (images.length > 1) {
-      loadSlideshowImage(safeIndex + 1);
-    } else {
-      img.src = '';
-    }
-  };
-
-  img.onload = function() {
-    img.onerror = null;
-  };
-
-  grafTIndex = safeIndex;
-  img.src = src;
-}
-
 function openSlideshow(images) {
-  activeSlideshowImages = (images || []).filter(Boolean);
-  loadSlideshowImage(0);
+  activeSlideshowImages = images;
+  if (!activeSlideshowImages || activeSlideshowImages.length === 0) {
+    document.getElementById('grafTImage').src = '';
+  } else {
+    grafTIndex = 0;
+    document.getElementById('grafTImage').src = activeSlideshowImages[grafTIndex];
+  }
   var navBtns = document.querySelector('.grafT-nav-btns');
   if (navBtns) navBtns.style.display = '';
   document.getElementById('grafTModal').style.display = 'flex';
@@ -631,12 +607,14 @@ window.closeGrafTSlideshow = function() {
 }
 window.nextGrafTImage = function() {
   if (activeSlideshowImages && activeSlideshowImages.length > 0) {
-    loadSlideshowImage(grafTIndex + 1);
+    grafTIndex = (grafTIndex + 1) % activeSlideshowImages.length;
+    document.getElementById('grafTImage').src = activeSlideshowImages[grafTIndex];
   }
 }
 window.prevGrafTImage = function() {
   if (activeSlideshowImages && activeSlideshowImages.length > 0) {
-    loadSlideshowImage(grafTIndex - 1);
+    grafTIndex = (grafTIndex - 1 + activeSlideshowImages.length) % activeSlideshowImages.length;
+    document.getElementById('grafTImage').src = activeSlideshowImages[grafTIndex];
   }
 }
 // --- einde slideshow ---
