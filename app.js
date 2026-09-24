@@ -87,7 +87,7 @@ const translations = {
         contact: "Contact",
         
         missionTitle: "Missie",
-        event2register3x3:"Inschrijven bball 3X3",
+        event2register3x3:"Inschrijven bball 3X3 (Beëindigd)",
         missionIntro: "De STrooperij is een vriendengroep met elk hun eigen talenten. We organiseren unieke evenementen in onze geboortestad DieST, met als missie: mensen samenbrengen rond urban sports en cultuur. Sinds de eerste edities van Summer Jam (2002-2007) in het Warandepark, is de passie voor street culture altijd blijven leven. In 2018 bliezen we het concept nieuw leven in, en met groot succes, want in 2023 kregen we de Publieksprijs van de Cultuurraad van DieST. Het draait om creativiteit, sport, muziek, en verbinding – voor jong en oud.",
         sportTitle: "Sport",
         sportText: "Van skatecontest en 3x3 basketbal tot freerunning – sport is een vaste waarde bij elk event van De STrooperij. Lokale verenigingen zoals de Diestse Sharks en skaters nemen het voortouw in de organisatie. Bewegen, samenwerken en samen genieten.",
@@ -212,7 +212,7 @@ const translations = {
         contact: "Contact",
         
         missionTitle: "Mission",
-        event2register3x3: "Register bball 3X3",
+        event2register3x3: "Register bball 3X3 (Ended)",
         missionIntro: "De STrooperij is a group of friends, each with their own talents. We organize unique events in our hometown DieST with one mission: bringing people together through urban sports and culture. Since the early editions of Summer Jam (2002–2007) in Warande Park, our passion for street culture has never faded. In 2018, we revived the concept with great success – in 2023 we won the Audience Award from DieST’s Culture Council. It's all about creativity, sports, music, and connection – for young and old.",
         sportTitle: "Sports",
         sportText: "From skate contests and 3x3 basketball to freerunning – sports are a staple at every De STrooperij event. Local organizations like the Diest Sharks and skaters take the lead in planning. Movement, collaboration, and shared fun.",
@@ -319,7 +319,7 @@ const translations = {
         home_dst: "De STrooperij",
         
         missionTitle: "Mission",
-        event2register3x3: "Inscription bball 3X3",
+        event2register3x3: "Inscription bball 3X3 (Terminée)",
         missionIntro: "De STrooperij est un groupe d’amis, chacun avec ses propres talents. Nous organisons des événements uniques dans notre ville natale de DieST avec une mission : rassembler les gens autour des sports urbains et de la culture. Depuis les premières éditions de Summer Jam (2002–2007) au parc Warande, notre passion pour la culture urbaine n’a jamais cessé. En 2018, nous avons relancé le concept avec grand succès – en 2023, nous avons reçu le Prix du Public du Conseil de la Culture de DieST. Il s'agit de créativité, de sport, de musique et de connexion – pour les jeunes et les moins jeunes.",
         sportTitle: "Sport",
         sportText: "Des concours de skate et du basket 3x3 au freerun – le sport est une valeur sûre lors de chaque événement de De STrooperij. Des associations locales comme les Diest Sharks et des skateurs prennent les devants dans l’organisation. Bouger, collaborer et profiter ensemble.",
@@ -405,7 +405,7 @@ const translations = {
 };
 
   Object.assign(translations.en, {
-    event2register3x3: "Register bball 3X3",
+    event2register3x3: "Register bball 3X3 (Ended)",
     summerJamInfoTitle: "SUMMER JAM 2026",
     summerJamInfoIntro: "On Saturday 29 August, Warande Park will come alive during Summer Jam 2026!",
     summerJamInfoTagline: "De STrooperij organizes a day full of sport, creativity and street culture.",
@@ -433,7 +433,7 @@ const translations = {
   });
 
   Object.assign(translations.fr, {
-    event2register3x3: "Inscription bball 3X3",
+    event2register3x3: "Inscription bball 3X3 (Terminée)",
     summerJamInfoTitle: "SUMMER JAM 2026",
     summerJamInfoIntro: "Le samedi 29 août, le parc Warande s’anime pendant Summer Jam 2026 !",
     summerJamInfoTagline: "De STrooperij organise une journée pleine de sport, de créativité et de street culture.",
